@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Korea Biotech CEO Forum 2026 - 참가신청</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Outfit:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1a7ba0;
+            --primary-dark: #0a4d68;
+            --accent: #8bc34a;
+            --accent-yellow: #ffd54f;
+            --dark: #1a1a2e;
+            --gray-100: #f8f9fa;
+            --gray-200: #e9ecef;
+            --gray-300: #dee2e6;
+            --gray-700: #495057;
+            --white: #ffffff;
+            --success: #2d6a4f;
+            --danger: #d00000;
+        }
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background: linear-gradient(135deg, #e8f5e9 0%, #b2dfdb 100%);
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 50%, #004d6d 100%);
+            color: var(--white);
+            padding: 3.5rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* 배경 장식 패턴 */
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(139, 195, 74, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            animation: patternMove 20s linear infinite;
+        }
+        
+        @keyframes patternMove {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            100% {
+                transform: translate(50px, 50px) rotate(360deg);
+            }
+        }
+        
+        /* 장식용 원형 요소들 */
+        .header::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(139, 195, 74, 0.15), transparent 70%);
+            border-radius: 50%;
+            top: -200px;
+            right: -100px;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(30px) scale(1.05);
+            }
+        }
+        
+        .logo-container {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .logo-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .logo {
+            max-width: 500px;
+            width: 100%;
+            height: auto;
+            display: block;
+            position: relative;
+            filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.3)) 
+                    drop-shadow(0 0 40px rgba(255, 255, 255, 0.3));
+        }
+        
+        /* 로고 뒤 빛나는 효과 */
+        .logo-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 110%;
+            height: 110%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: -1;
+            animation: glow 3s ease-in-out infinite;
+        }
+        
+        @keyframes glow {
+            0%, 100% {
+                opacity: 0.5;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% {
+                opacity: 0.8;
+                transform: translate(-50%, -50%) scale(1.05);
+            }
+        }
+        
+        .header-info {
+            position: relative;
+            z-index: 2;
+            font-size: 1.1rem;
+            margin-top: 2rem;
+            line-height: 2;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 2rem;
+            border-radius: 15px;
+            border: 2px solid rgba(139, 195, 74, 0.3);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header-info div {
+            margin: 0.5rem 0;
+        }
+        
+        .header-info strong {
+            color: var(--accent-yellow);
+            font-weight: 700;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+        }
+        
+        .form-content {
+            padding: 2.5rem;
+        }
+        
+        .section {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--gray-200);
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+        }
+        
+        .section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 3px solid var(--accent);
+            display: inline-block;
+        }
+        
+        .section-description {
+            background: var(--gray-100);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--accent);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+        
+        .policy-box {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);
+            border: 2px solid var(--danger);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .policy-box h4 {
+            color: var(--danger);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .policy-box table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .policy-box table th,
+        .policy-box table td {
+            padding: 0.75rem;
+            text-align: center;
+            border: 1px solid var(--gray-300);
+        }
+        
+        .policy-box table th {
+            background: #ffe5e5;
+            color: var(--danger);
+            font-weight: 700;
+        }
+        
+        .policy-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .policy-box li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .policy-box li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--danger);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 2rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 1rem;
+        }
+        
+        .required {
+            color: var(--danger);
+            margin-left: 0.25rem;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--gray-300);
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: 'Noto Sans KR', sans-serif;
+            transition: all 0.3s ease;
+            background: var(--white);
+        }
+        
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        input[type="date"]:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(139, 195, 74, 0.1);
+        }
+        
+        /* 읽기 전용 인풋 스타일 추가 */
+        input[readonly] {
+            background-color: #e9ecef;
+            cursor: default;
+        }
+        
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .checkbox-group,
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .checkbox-item,
+        .radio-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            border: 2px solid var(--gray-300);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: var(--white);
+        }
+        
+        .checkbox-item:hover,
+        .radio-item:hover {
+            border-color: var(--accent);
+            background: rgba(139, 195, 74, 0.05);
+        }
+        
+        .checkbox-item input,
+        .radio-item input {
+            width: 20px;
+            height: 20px;
+            margin-right: 1rem;
+            cursor: pointer;
+            accent-color: var(--accent);
+        }
+        
+        .consent-box {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .photo-consent-box {
+            background: linear-gradient(135deg, #fff9e6 0%, #ffedd5 100%);
+            border: 2px solid #f59e0b;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .photo-consent-box h4 {
+            color: #d97706;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            border: none;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: 0.5px;
+            box-shadow: 0 10px 30px rgba(26, 123, 160, 0.3);
+        }
+        
+        .submit-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(26, 123, 160, 0.4);
+        }
+        
+        .submit-btn:active:not(:disabled) {
+            transform: translateY(0);
+        }
+        
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .contact-info {
+            background: var(--gray-100);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        
+        .contact-info h4 {
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            font-family: 'Outfit', sans-serif;
+        }
+        
+        .setup-notice {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffe9a6 100%);
+            border: 2px solid #ffc107;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .setup-notice h3 {
+            color: #d97706;
+            margin-bottom: 1rem;
+        }
+        
+        .setup-notice code {
+            background: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #d97706;
+        }
+        
+        .success-message {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            z-index: 1000;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+        }
+        
+        .success-message.show {
+            display: block;
+            animation: slideIn 0.3s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -45%);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+        
+        .success-icon {
+            font-size: 4rem;
+            color: var(--success);
+            margin-bottom: 1rem;
+        }
+        
+        .success-message h2 {
+            font-family: 'Outfit', sans-serif;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .success-message p {
+            color: var(--gray-700);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .edit-info {
+            background: var(--gray-100);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .close-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 999;
+        }
+        
+        .overlay.show {
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .logo {
+                max-width: 320px;
+            }
+
+            .header {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .header-info {
+                font-size: 1rem;
+                padding: 1rem 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.4rem;
+            }
+            
+            .form-content {
+                padding: 1.5rem;
+            }
+            
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .price-info {
+            background: linear-gradient(135deg, #fff9e6 0%, #ffedd5 100%);
+            border: 2px solid #f59e0b;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .price-info h4 {
+            color: #d97706;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+        }
+        
+        .price-item:last-child {
+            border-bottom: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--primary);
+            padding-top: 1rem;
+            margin-top: 0.5rem;
+            border-top: 2px solid #f59e0b;
+        }
+
+        .account-info {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border: 2px solid var(--success);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        .account-info h4 {
+            color: var(--success);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .account-info .account-details {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+    
+    <div class="success-message" id="successMessage">
+        <div class="success-icon">✓</div>
+        <h2>등록이 완료되었습니다!</h2>
+        <p>
+            입금 확인 후 참가 신청이 최종 완료되며,<br>
+            확인 이메일을 보내드리겠습니다.
+        </p>
+        <div class="edit-info">
+            <strong>📝 등록 내용 수정 방법</strong><br><br>
+            <strong>방법 1 (권장):</strong> 재등록<br>
+            동일한 이메일 주소로 폼을 다시 제출하면<br>
+            자동으로 내용이 업데이트됩니다.<br>
+            <br>
+            <strong>방법 2:</strong> 운영사무국 문의<br>
+            moonjkim01@gmail.com | 010-2079-8754
+        </div>
+        <button class="close-btn" onclick="closeSuccessMessage()">확인</button>
+    </div>
+
+    <div class="setup-notice">
+        <h3>⚙️ 설정 필요</h3>
+        <p>이 폼을 사용하기 전에 Google Apps Script URL을 설정해야 합니다.</p>
+        <p>JavaScript 코드에서 <code>YOUR_SCRIPT_URL_HERE</code>를 실제 Apps Script URL로 변경하세요.</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">설정 방법은 함께 제공된 가이드 문서를 참고하세요.</p>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <div class="logo-container">
+                <div class="logo-wrapper">
+                    <img src="logo.jpg" alt="Korea Biotech CEO Forum Logo" class="logo">
+                </div>
+            </div>
+            <div class="header-info">
+                <div><strong>일정:</strong> 2026년 2월 27일 (금) 3:30 PM - 3월 1일 (일) 12:00 PM</div>
+                <div><strong>장소:</strong> 디아넥스호텔 · 비오토피아 (제주)</div>
+            </div>
+        </div>
+        
+        <form class="form-content" id="registrationForm">
+            <div class="section">
+                <h2 class="section-title">개인정보 수집 및 이용 동의</h2>
+                
+                <div class="consent-box">
+                    <p style="margin-bottom: 1rem; font-weight: 600;">
+                        "Korea Biotech CEO Forum 2026"은 참가자님의 개인정보를 중요시하며 "개인정보보호법"을 준수하고 있습니다.
+                    </p>
+                    
+                    <div style="line-height: 1.9; font-size: 0.95rem;">
+                        <p><strong>1. 수집 목적</strong></p>
+                        <p style="margin-left: 1rem; margin-bottom: 1rem;">- 본인 확인 및 개인식별, 참가 관련 정보제공 등의 참가자 관리<br>- 행사 운영 및 네트워킹 지원</p>
+                        
+                        <p><strong>2. 수집 항목</strong></p>
+                        <p style="margin-left: 1rem; margin-bottom: 1rem;">- 필수 항목: 이름, 이메일, 휴대폰 번호, 소속 회사명<br>- 선택 항목: 관심 주제, 참석 일정, 음식 알레르기 정보</p>
+                        
+                        <p><strong>3. 수집 방법</strong></p>
+                        <p style="margin-left: 1rem; margin-bottom: 1rem;">- 온라인 참가신청서를 통한 직접 입력</p>
+                        
+                        <p><strong>4. 보유 및 이용 기간</strong></p>
+                        <p style="margin-left: 1rem;">- 개인정보 수집 및 이용목적이 달성된 후(행사 종료 후 6개월)에는 해당 정보를 지체 없이 파기합니다.</p>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="privacy-agree" name="privacy-consent" value="agree" required>
+                            <label for="privacy-agree" style="margin: 0; font-weight: 500; cursor: pointer;">개인정보 수집 및 이용에 동의합니다</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="privacy-disagree" name="privacy-consent" value="disagree">
+                            <label for="privacy-disagree" style="margin: 0; font-weight: 500; cursor: pointer;">동의하지 않습니다</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">사진 촬영 및 사용 동의</h2>
+                
+                <div class="photo-consent-box">
+                    <h4>📸 사진 촬영 및 활용 안내</h4>
+                    <p style="line-height: 1.8; margin-bottom: 1rem;">
+                        본 행사에서는 행사 기록을 위해 사진 및 영상을 촬영합니다.
+                    </p>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: #d97706; font-weight: bold;">•</span>
+                            촬영된 사진/영상은 내부 기록용으로 보관됩니다
+                        </li>
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: #d97706; font-weight: bold;">•</span>
+                            다음 해 행사 프리뷰 자료로 활용될 수 있습니다
+                        </li>
+                        <li style="padding: 0.5rem 0; padding-left: 1.5rem; position: relative;">
+                            <span style="position: absolute; left: 0; color: #d97706; font-weight: bold;">•</span>
+                            웹사이트 및 행사 관련 자료에 게재될 수 있습니다
+                        </li>
+                    </ul>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: #d97706;">
+                        ※ 촬영을 원하지 않으시는 경우, 현장에서 운영진에게 말씀해 주시기 바랍니다.
+                    </p>
+                </div>
+                
+                <div class="form-group">
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="photo-agree" name="photo-consent" value="agree" required>
+                            <label for="photo-agree" style="margin: 0; font-weight: 500; cursor: pointer;">사진 촬영 및 활용에 동의합니다</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="photo-disagree" name="photo-consent" value="disagree">
+                            <label for="photo-disagree" style="margin: 0; font-weight: 500; cursor: pointer;">동의하지 않습니다 (현장에서 별도 안내받겠습니다)</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">취소 및 환불 정책</h2>
+                
+                <div class="policy-box">
+                    <h4>【환불 정책】</h4>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>취소 시점</th>
+                                <th>60~46일전</th>
+                                <th>45~31일전</th>
+                                <th>30~15일전</th>
+                                <th>14일전~당일</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>환불률</strong></td>
+                                <td>30%</td>
+                                <td>50%</td>
+                                <td>70%</td>
+                                <td>100%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <p style="margin-top: 1rem; font-weight: 600; color: var(--danger);">
+                        ※ 행사 시작일 기준으로 계산됩니다 (2026년 2월 27일 기준)
+                    </p>
+                    
+                    <ul style="margin-top: 1rem;">
+                        <li>현장 미참여로 인한 취소 및 환불은 불가합니다</li>
+                        <li>결제 후 환불 진행 시 영업일 기준 최대 10일 소요되며, 송금 수수료는 참가자 부담입니다</li>
+                        <li>환불은 참가비에만 적용되며, 숙박비는 별도 환불 규정을 따릅니다</li>
+                    </ul>
+                    
+                    <h4 style="margin-top: 1.5rem;">【취소 방법】</h4>
+                    <ul>
+                        <li>취소 신청: 등록 확인 이메일에 포함된 링크를 통해 신청</li>
+                        <li>또는 운영사무국 이메일(moonjkim01@gmail.com)로 취소 요청</li>
+                    </ul>
+                </div>
+                
+                <div class="form-group">
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="refund-agree" name="refund-consent" value="agree" required>
+                            <label for="refund-agree" style="margin: 0; font-weight: 500; cursor: pointer;">취소 및 환불 정책을 확인하였으며 이에 동의합니다</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="refund-disagree" name="refund-consent" value="disagree">
+                            <label for="refund-disagree" style="margin: 0; font-weight: 500; cursor: pointer;">동의하지 않습니다</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">참석자 정보</h2>
+                
+                <div class="section-description">
+                    원활한 행사 운영을 위해 간단한 정보를 요청드립니다.<br>
+                    응답 내용은 본 행사 운영 목적 외에는 사용되지 않으며 행사 종료 후 내부 규정에 따라 관리됩니다.
+                </div>
+                
+                <div class="info-grid">
+                    <div class="form-group">
+                        <label for="name">성함 (Full Name) <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" required placeholder="홍길동">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company">소속 회사 (Company) <span class="required">*</span></label>
+                        <input type="text" id="company" name="company" required placeholder="㈜바이오테크">
+                    </div>
+                </div>
+                
+                <div class="info-grid">
+                    <div class="form-group">
+                        <label for="email">이메일 (Email) <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="example@biotech.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">휴대폰 번호 (Mobile Number) <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" required placeholder="010-1234-5678">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">네트워킹 & 포럼 운영 관련</h2>
+                
+                <div class="form-group">
+                    <label>이번 포럼에서 가장 관심 있는 주제 (복수 선택 가능) <span class="required">*</span></label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="topic1" name="topics" value="자금 조달 / Runway / Capital 전략">
+                            <label for="topic1" style="margin: 0; cursor: pointer;">자금 조달 / Runway / Capital 전략</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="topic2" name="topics" value="파트너십 / 기술·사업 Deal">
+                            <label for="topic2" style="margin: 0; cursor: pointer;">파트너십 / 기술·사업 Deal</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="topic3" name="topics" value="조직 운영 / 인재 / 글로벌 팀">
+                            <label for="topic3" style="margin: 0; cursor: pointer;">조직 운영 / 인재 / 글로벌 팀</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="topic4" name="topics" value="규제 / 정책 / 외부 환경 변화">
+                            <label for="topic4" style="margin: 0; cursor: pointer;">규제 / 정책 / 외부 환경 변화</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="topic5" name="topics" value="R&D 전략: 플랫폼 vs 에셋 / Pivot 여부 결정">
+                            <label for="topic5" style="margin: 0; cursor: pointer;">R&D 전략: 플랫폼 vs 에셋 / Pivot 여부 결정</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="topic6" name="topics" value="CEO로서의 의사결정과 리더십">
+                            <label for="topic6" style="margin: 0; cursor: pointer;">CEO로서의 의사결정과 리더십</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="topic7" name="topics" value="특정 주제 없이 자유 토론">
+                            <label for="topic7" style="margin: 0; cursor: pointer;">특정 주제 없이 자유 토론</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="discussion-topic">참여자 간 논의가 의미 있을 것으로 생각되는 주제가 있다면 알려주세요 <span class="required">*</span></label>
+                    <textarea id="discussion-topic" name="discussion-topic" required placeholder="자유롭게 작성해 주세요"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>본 포럼은 발표 중심이 아닌, 경험과 관점을 나누는 대화 중심의 포럼입니다. 가능하시다면 아래 역할 중 관심 있는 항목을 편하게 선택해 주세요 <span class="required">*</span></label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="role1" name="roles" value="Fireside Chat 패널">
+                            <label for="role1" style="margin: 0; cursor: pointer;">Fireside Chat 패널 (경험·사례 중심 대화)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="role2" name="roles" value="세션 토론 패널">
+                            <label for="role2" style="margin: 0; cursor: pointer;">세션 토론 패널</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="role3" name="roles" value="세션 모더레이터">
+                            <label for="role3" style="margin: 0; cursor: pointer;">세션 모더레이터 (질문 중심 진행)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="role4" name="roles" value="경험 공유">
+                            <label for="role4" style="margin: 0; cursor: pointer;">특정 주제에 대한 짧은 경험 공유 (5–7분, 슬라이드 없음)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="role5" name="roles" value="참여만 희망">
+                            <label for="role5" style="margin: 0; cursor: pointer;">참여만 희망</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">참석 일정 확인</h2>
+                
+                <div class="form-group">
+                    <label for="attendance-plan">행사 참석 계획 <span class="required">*</span></label>
+                    <select id="attendance-plan" name="attendance-plan" required>
+                        <option value="">선택해 주세요</option>
+                        <option value="전체 일정 참석">전체 일정 참석 (2/27–3/1)</option>
+                        <option value="일부 일정 참석">일부 일정 참석</option>
+                        <option value="아직 조율 중">아직 조율 중</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>실제 참석 일정 (복수 선택) <span class="required">*</span></label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="date1" name="dates" value="2/27(금) 칵테일 리셉션 & 만찬">
+                            <label for="date1" style="margin: 0; cursor: pointer;">2월 27일 (금) – 칵테일 리셉션 & 만찬</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="date2" name="dates" value="2/27(금) Post-event Gathering">
+                            <label for="date2" style="margin: 0; cursor: pointer;">2월 27일 (금) – Post-event Gathering</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="date3" name="dates" value="2/28(토) CEO Forum">
+                            <label for="date3" style="margin: 0; cursor: pointer;">2월 28일 (토) – CEO Forum (전일)</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="date4" name="dates" value="2/28(토) Post-event Gathering">
+                            <label for="date4" style="margin: 0; cursor: pointer;">2월 28일 (토) – Post-event Gathering</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="date5" name="dates" value="미정">
+                            <label for="date5" style="margin: 0; cursor: pointer;">미정</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="allergy">음식 알레르기 또는 식이 제한 사항 (선택사항)</label>
+                    <input type="text" id="allergy" name="allergy" placeholder="특별한 음식 알레르기나 채식주의 등 식이 제한이 있으시면 알려주세요">
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">결제 정보</h2>
+                
+                <div class="price-info">
+                    <h4>참가비 안내</h4>
+                    <div class="price-item">
+                        <span>참가비 (1인)</span>
+                        <span>1,000,000원 (VAT 별도)</span>
+                    </div>
+                    <div class="price-item">
+                        <span>숙박비 (1박/룸당, 조식 포함)</span>
+                        <span>300,000원 (VAT 별도)</span>
+                    </div>
+                    <div class="price-item" style="font-size: 0.95rem; font-weight: 400; border-top: none; padding-top: 0; margin-top: 0;">
+                        <span style="color: var(--gray-700);">※ 동반 참가 시 추가 참가비 없음 (숙박비만 별도)</span>
+                        <span></span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>숙박 신청 여부 <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="accommodation-yes" name="accommodation" value="신청" required>
+                            <label for="accommodation-yes" style="margin: 0; cursor: pointer;">숙박 신청</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="accommodation-no" name="accommodation" value="미신청">
+                            <label for="accommodation-no" style="margin: 0; cursor: pointer;">숙박 미신청</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="accommodation-details" class="hidden">
+                    <div style="background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%); border: 2px solid var(--primary); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0;">
+                        <h4 style="color: var(--primary); margin-bottom: 1rem; font-size: 1.1rem;">🏨 숙박 정보</h4>
+                        <p style="margin-bottom: 1rem; line-height: 1.8;">
+                            <strong>위치:</strong> 디아넥스호텔 · 비오토피아 (제주)<br>
+                            <strong>포함사항:</strong> 객실, 조식<br>
+                            <strong>1박당 가격:</strong> 300,000원 (VAT 별도)
+                        </p>
+                        
+                        <div class="info-grid" style="gap: 1rem;">
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <label for="nights">숙박 박수</label>
+                                <select id="nights" name="nights" style="padding: 0.75rem; font-size: 1rem;">
+                                    <option value="0">선택</option>
+                                    <option value="1">1박</option>
+                                    <option value="2">2박</option>
+</select>
+                            </div>
+                            
+                            
+                        </div>
+                        
+                        <div id="accommodation-calculation" style="display: none; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px solid rgba(26, 123, 160, 0.2);">
+                            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 1.1rem;">
+                                <span style="font-weight: 600; color: var(--primary);">숙박비 합계</span>
+                                <span style="font-weight: 700; font-size: 1.3rem; color: var(--primary);" id="accommodation-total">0원</span>
+                            </div>
+                            <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--gray-700);">
+                                = <span id="nights-display">0</span>박 × 300,000원 (1인 1실, VAT 별도)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>결제 방법 <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="payment-card" name="payment-method" value="신용카드 결제" required>
+                            <label for="payment-card" style="margin: 0; cursor: pointer;">신용카드 결제 (별도 안내 예정)</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="payment-invoice" name="payment-method" value="계좌 이체">
+                            <label for="payment-invoice" style="margin: 0; cursor: pointer;">계좌 이체 (세금계산서 발행 가능)</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="invoice-details" class="hidden">
+                    <div class="account-info">
+                        <h4>💰 입금 계좌 안내</h4>
+                        <div class="account-details">
+                            카카오뱅크 7942-25-80739<br>
+                            예금주: K-Biotech CEO Forum
+                        </div>
+                        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--gray-700);">
+                            입금 기한: 신청서 제출 후 7영업일 이내<br>
+                            ※ 입금 확인 후 참가 신청이 최종 완료됩니다.
+                        </p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>세금계산서 발행 여부</label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="invoice-yes" name="invoice-needed" value="필요">
+                                <label for="invoice-yes" style="margin: 0; cursor: pointer;">세금계산서 발행 필요</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="invoice-no" name="invoice-needed" value="불필요">
+                                <label for="invoice-no" style="margin: 0; cursor: pointer;">세금계산서 발행 불필요</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="invoice-info" class="hidden">
+                        <div class="info-grid">
+                            <div class="form-group">
+                                <label for="company-name">회사명(법인명)</label>
+                                <input type="text" id="company-name" name="company-name" placeholder="㈜바이오테크">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="business-number">사업자등록번호</label>
+                                <input type="text" id="business-number" name="business-number" placeholder="123-45-67890">
+                            </div>
+                        </div>
+
+                        <div id="calculated-costs" style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #dee2e6;">
+                            <div class="form-group">
+                                <label>공급가액 (Supply Value)</label>
+                                <input type="text" id="supply-value" readonly style="background-color: #e9ecef; color: #495057;">
+                                <small style="display:block; margin-top:5px; color:#666;">
+                                    * 참가비(100만원) + 숙박비(박당 30만원)
+                                </small>
+                            </div>
+                            <div class="form-group">
+                                <label>부가세 (VAT)</label>
+                                <input type="text" id="vat-value" readonly style="background-color: #e9ecef; color: #495057;">
+                                <small style="display:block; margin-top:5px; color:#666;">
+                                    * 공급가액의 10%
+                                </small>
+                            </div>
+                            <div class="form-group">
+                                <label>합계 (Total Amount)</label>
+                                <input type="text" id="total-value" readonly style="background-color: #e9ecef; font-weight: bold; color: var(--primary); font-size: 1.1rem;">
+                            </div>
+                        </div>
+                        <div class="info-grid">
+                            <div class="form-group">
+                                <label for="invoice-name">세금계산서 수령자 이름</label>
+                                <input type="text" id="invoice-name" name="invoice-name" placeholder="홍길동">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="invoice-phone">세금계산서 수령자 연락처</label>
+                                <input type="tel" id="invoice-phone" name="invoice-phone" placeholder="010-1234-5678">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="invoice-email">세금계산서 수령자 이메일</label>
+                            <input type="email" id="invoice-email" name="invoice-email" placeholder="invoice@biotech.com">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="depositor-name">입금자명</label>
+                        <input type="text" id="depositor-name" name="depositor-name" placeholder="입금자명이 신청자명과 다른 경우 반드시 기재해 주세요">
+                    </div>
+                </div>
+            </div>
+            
+            <button type="submit" class="submit-btn">참가 신청하기</button>
+            
+            <div class="contact-info">
+                <h4>문의</h4>
+                <p>김문정 | moonjkim01@gmail.com | 010-2079-8754</p>
+            </div>
+        </form>
+    </div>
+    
+    <script>
+        // ⚠️ 중요: 아래 URL을 실제 Google Apps Script URL로 변경하세요
+        const GOOGLE_SCRIPT_URL = 'YOUR_SCRIPT_URL_HERE';
+        
+        // 성공 메시지 팝업 표시
+        function showSuccessMessage() {
+            document.getElementById('overlay').classList.add('show');
+            document.getElementById('successMessage').classList.add('show');
+        }
+        
+        // 성공 메시지 팝업 닫기
+        function closeSuccessMessage() {
+            document.getElementById('overlay').classList.remove('show');
+            document.getElementById('successMessage').classList.remove('show');
+        }
+        
+        // 폼 제출 처리
+        document.getElementById('registrationForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // URL 설정 확인
+            if (GOOGLE_SCRIPT_URL === 'YOUR_SCRIPT_URL_HERE') {
+                alert('⚠️ Google Apps Script URL을 설정해야 합니다.\n\nJavaScript 코드에서 GOOGLE_SCRIPT_URL을 실제 URL로 변경해 주세요.');
+                return;
+            }
+            
+            // 개인정보 동의 확인
+            const privacyConsent = document.querySelector('input[name="privacy-consent"]:checked');
+            if (!privacyConsent || privacyConsent.value !== 'agree') {
+                alert('개인정보 수집 및 이용에 동의해 주셔야 신청이 가능합니다.');
+                return;
+            }
+
+            // 사진 촬영 동의 확인
+            const photoConsent = document.querySelector('input[name="photo-consent"]:checked');
+            if (!photoConsent) {
+                alert('사진 촬영 및 사용에 대한 동의 여부를 선택해 주세요.');
+                return;
+            }
+            
+            // 환불 정책 동의 확인
+            const refundConsent = document.querySelector('input[name="refund-consent"]:checked');
+            if (!refundConsent || refundConsent.value !== 'agree') {
+                alert('취소 및 환불 정책에 동의해 주셔야 신청이 가능합니다.');
+                return;
+            }
+            
+            // 관심 주제 선택 확인
+            const topics = document.querySelectorAll('input[name="topics"]:checked');
+            if (topics.length === 0) {
+                alert('최소 하나 이상의 관심 주제를 선택해 주세요.');
+                return;
+            }
+            
+            // 역할 선택 확인
+            const roles = document.querySelectorAll('input[name="roles"]:checked');
+            if (roles.length === 0) {
+                alert('최소 하나 이상의 역할을 선택해 주세요.');
+                return;
+            }
+            
+            // 참석 일정 선택 확인
+            const dates = document.querySelectorAll('input[name="dates"]:checked');
+            if (dates.length === 0) {
+                alert('최소 하나 이상의 참석 일정을 선택해 주세요.');
+                return;
+            }
+            
+            // 폼 데이터 수집
+            const formData = new FormData(this);
+            const data = {
+                timestamp: new Date().toISOString()
+            };
+            
+            // 체크박스는 배열로 수집
+            const checkboxFields = ['topics', 'roles', 'dates'];
+            
+            for (let [key, value] of formData.entries()) {
+                if (checkboxFields.includes(key)) {
+                    if (!data[key]) {
+                        data[key] = [];
+                    }
+                    data[key].push(value);
+                } else {
+                    data[key] = value;
+                }
+            }
+            
+            // 로딩 표시
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = '제출 중...';
+            submitBtn.disabled = true;
+            
+            try {
+                // Google Apps Script로 데이터 전송
+                const response = await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                // 성공 메시지 팝업 표시
+                showSuccessMessage();
+                
+                // 폼 리셋
+                this.reset();
+                
+                // 숨겨진 섹션들 초기화
+                document.getElementById('invoice-details').classList.add('hidden');
+                document.getElementById('invoice-info').classList.add('hidden');
+                
+            } catch (error) {
+                console.error('Error:', error);
+                alert('신청 중 오류가 발생했습니다.\n잠시 후 다시 시도해 주세요.\n\n오류가 계속되면 운영사무국(moonjkim01@gmail.com)으로 문의해 주세요.');
+            } finally {
+                // 버튼 복구
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+        
+        // 숙박 신청 선택 시 상세 정보 표시
+        document.querySelectorAll('input[name="accommodation"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                const accommodationDetails = document.getElementById('accommodation-details');
+                if (this.value === '신청') {
+                    accommodationDetails.classList.remove('hidden');
+                } else {
+                    accommodationDetails.classList.add('hidden');
+                    // 숙박 미신청 시 박수 초기화 (계산 로직을 위해)
+                    document.getElementById('nights').value = "0";
+                }
+                // 숙박 여부 변경 시 금액 재계산
+                calculateInvoiceAmounts();
+            });
+        });
+        
+        // 숙박비 UI 계산용 함수
+        function calculateAccommodation() {
+            const nights = parseInt(document.getElementById('nights').value) || 0;
+            const pricePerNight = 300000;
+
+            if (nights > 0) {
+                const total = nights * pricePerNight;
+                document.getElementById('accommodation-total').textContent = total.toLocaleString() + '원';
+                document.getElementById('nights-display').textContent = nights;
+                document.getElementById('accommodation-calculation').style.display = 'block';
+            } else {
+                document.getElementById('accommodation-calculation').style.display = 'none';
+            }
+            // 숙박 박수 변경 시 세금계산서 금액도 재계산
+            calculateInvoiceAmounts();
+        }
+        document.getElementById('nights').addEventListener('change', calculateAccommodation);
+
+        // 계좌 이체 선택 시 계좌 정보 표시
+        document.querySelectorAll('input[name="payment-method"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                const invoiceDetails = document.getElementById('invoice-details');
+                if (this.value === '계좌 이체') {
+                    invoiceDetails.classList.remove('hidden');
+                } else {
+                    invoiceDetails.classList.add('hidden');
+                }
+            });
+        });
+
+        // 세금계산서 필요 선택 시 세금계산서 정보 표시
+        document.querySelectorAll('input[name="invoice-needed"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                const invoiceInfo = document.getElementById('invoice-info');
+                if (this.value === '필요') {
+                    invoiceInfo.classList.remove('hidden');
+                    // 표시될 때 금액 계산 실행
+                    calculateInvoiceAmounts();
+                } else {
+                    invoiceInfo.classList.add('hidden');
+                }
+            });
+        });
+
+        // [추가된 함수] 세금계산서 금액 계산 로직
+        function calculateInvoiceAmounts() {
+            // 기본 참가비 (VAT 별도)
+            const registrationFee = 1000000; 
+            // 1박 숙박비 (VAT 별도)
+            const pricePerNight = 300000;
+            
+            let nights = 0;
+            const accommodationStatus = document.querySelector('input[name="accommodation"]:checked');
+
+            // 숙박 신청 상태이고, 박수가 선택되었을 때만 숙박비 추가
+            if (accommodationStatus && accommodationStatus.value === '신청') {
+                nights = parseInt(document.getElementById('nights').value) || 0;
+            }
+
+            // 공급가액 계산 (참가비 + 숙박비)
+            const totalSupply = registrationFee + (nights * pricePerNight);
+            
+            // 부가세 계산 (10%)
+            const totalVat = totalSupply * 0.1;
+            
+            // 합계 계산
+            const grandTotal = totalSupply + totalVat;
+
+            // 필드 업데이트 (콤마 추가)
+            document.getElementById('supply-value').value = totalSupply.toLocaleString() + "원";
+            document.getElementById('vat-value').value = totalVat.toLocaleString() + "원";
+            document.getElementById('total-value').value = grandTotal.toLocaleString() + "원";
+        }
+        
+        // 동의하지 않음 선택 시 경고
+        document.getElementById('privacy-disagree').addEventListener('change', function() {
+            if (this.checked) {
+                alert('개인정보 수집 및 이용에 동의하지 않으시면 참가 신청이 불가능합니다.');
+            }
+        });
+        
+        document.getElementById('refund-disagree').addEventListener('change', function() {
+            if (this.checked) {
+                alert('취소 및 환불 정책에 동의하지 않으시면 참가 신청이 불가능합니다.');
+            }
+        });
+    </script>
+</body>
+</html>
