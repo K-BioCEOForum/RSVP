@@ -3,26 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Korea Biotech CEO Forum 2026 - 참가신청</title>
+    <title>Korea Biotech CEO Forum 2026 - 참가신청 (Web)</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Outfit:wght@300;400;600;700&display=swap');
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         
         :root {
-            --primary: #1a7ba0;       /* 메인 블루 */
-            --primary-dark: #0f4c63;  /* 짙은 블루 */
-            --accent: #8bc34a;        /* 포인트 그린 */
-            --bg-gray: #f4f6f9;       /* 배경 회색 */
+            --primary: #1a7ba0;
+            --primary-dark: #0f4c63;
+            --accent: #8bc34a;
+            --bg-gray: #f4f6f9;
             --text-main: #333333;
             --text-sub: #666666;
             --border-color: #e1e4e8;
             --white: #ffffff;
-            --danger: #d32f2f;        /* 빨간색 (필수 표시용) */
+            --danger: #d32f2f;
         }
         
         body {
@@ -42,7 +38,6 @@
             overflow: hidden;
         }
         
-        /* 헤더 디자인 */
         .header {
             background: linear-gradient(135deg, #1a7ba0 0%, #0d4b63 100%);
             color: var(--white);
@@ -50,20 +45,8 @@
             text-align: center;
         }
         
-        .logo-container {
-            margin-bottom: 0; 
-            display: flex;
-            justify-content: center;
-        }
-        
-        .logo {
-            max-width: 600px; 
-            width: 100%;
-            height: auto;
-            display: block;
-            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.2));
-            margin-bottom: -10px; 
-        }
+        .logo-container { margin-bottom: 0; display: flex; justify-content: center; }
+        .logo { max-width: 600px; width: 100%; height: auto; display: block; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.2)); margin-bottom: -10px; }
         
         .header-info {
             background: rgba(255, 255, 255, 0.1);
@@ -77,24 +60,11 @@
             margin-top: 10px; 
         }
         
-        .header-info div {
-            margin: 0.3rem 0;
-        }
+        .header-info div { margin: 0.3rem 0; }
+        .header-info strong { color: #ffd54f; font-weight: 600; margin-right: 0.5rem; }
         
-        .header-info strong {
-            color: #ffd54f;
-            font-weight: 600;
-            margin-right: 0.5rem;
-        }
-        
-        .form-content {
-            padding: 3rem 2.5rem;
-        }
-        
-        /* 섹션 스타일 */
-        .section {
-            margin-bottom: 3.5rem;
-        }
+        .form-content { padding: 3rem 2.5rem; }
+        .section { margin-bottom: 3.5rem; }
         
         .section-title {
             font-family: 'Outfit', sans-serif;
@@ -107,300 +77,85 @@
         }
         
         .section-title::before {
-            content: '';
-            display: block;
-            width: 6px;
-            height: 24px;
-            background-color: var(--primary);
-            margin-right: 12px;
-            border-radius: 3px;
+            content: ''; display: block; width: 6px; height: 24px;
+            background-color: var(--primary); margin-right: 12px; border-radius: 3px;
         }
         
-        .section-description {
-            color: var(--text-sub);
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-        }
-        
-        /* 박스 스타일 (약관, 정책, 가격정보 통합) */
         .consent-box, .policy-box, .photo-consent-box, .price-info {
-            background-color: #f8f9fa; /* 회색 배경으로 통일 */
-            border: 1px solid var(--border-color); /* 테두리 통일 */
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-            color: var(--text-sub);
-        }
-        
-        /* 박스 내 제목 스타일 통일 */
-        .consent-box strong, .policy-box h4, .photo-consent-box h4, .price-info h4 {
-            color: var(--primary-dark); /* 짙은 파란색으로 통일 */
-            font-weight: 700;
-            display: block;
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem; /* 폰트 사이즈 통일 */
-        }
-        
-        .policy-box table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1rem 0;
-            background: white;
-            font-size: 0.9rem;
-        }
-        
-        .policy-box th {
-            background-color: #eef2f5;
-            color: var(--primary-dark);
-            font-weight: 600;
-            padding: 0.8rem;
-            border: 1px solid var(--border-color);
-        }
-        
-        .policy-box td {
-            padding: 0.8rem;
-            text-align: center;
-            border: 1px solid var(--border-color);
-        }
-        
-        /* 폼 요소 디자인 */
-        .form-group {
-            margin-bottom: 1.8rem;
-        }
-        
-        label {
-            display: block;
-            margin-bottom: 0.6rem;
-            font-weight: 600;
-            color: var(--text-main);
-            font-size: 0.95rem;
-        }
-        
-        /* 필수 항목 별표 스타일 */
-        .required {
-            color: var(--danger);
-            margin-left: 3px;
-            font-weight: bold;
-        }
-        
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"],
-        select,
-        textarea {
-            width: 100%;
-            padding: 0.9rem 1rem;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            font-size: 1rem;
-            font-family: inherit;
-            transition: all 0.2s ease;
-            background-color: #fff;
-        }
-        
-        input:focus, select:focus, textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(26, 123, 160, 0.1);
-        }
-        
-        input[readonly] {
-            background-color: #f1f3f5;
-            color: var(--text-sub);
-            cursor: default;
-        }
-        
-        /* 라디오/체크박스 스타일 */
-        .checkbox-group, .radio-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-        }
-        
-        .checkbox-item, .radio-item {
-            display: flex;
-            align-items: center;
-            padding: 1rem;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.2s;
-            background: white;
-        }
-        
-        .checkbox-item:hover, .radio-item:hover {
-            border-color: var(--primary);
-            background-color: #f0f7fa;
-            transform: translateY(-1px);
-        }
-        
-        .checkbox-item input, .radio-item input {
-            width: 18px;
-            height: 18px;
-            margin-right: 12px;
-            accent-color: var(--primary);
-        }
-        
-        /* 버튼 스타일 */
-        .submit-btn {
-            width: 100%;
-            padding: 1.2rem;
-            background: linear-gradient(to right, var(--primary), var(--primary-dark));
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-            margin-top: 1rem;
-        }
-        
-        .submit-btn:hover:not(:disabled) {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(26, 123, 160, 0.3);
-        }
-        
-        .submit-btn:disabled {
-            background: #ccc;
-            cursor: not-allowed;
-            transform: none;
-        }
-        
-        /* 정보 그리드 */
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        /* [수정됨] 가격 정보 아이템: 세로 배치 및 왼쪽 정렬 */
-        .price-item {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 8px;
-            padding: 1.2rem 0;
-            border-bottom: 1px dashed rgba(0,0,0,0.1);
-            font-size: 0.95rem;
-            color: var(--text-sub);
-        }
-
-        .price-item:last-child {
-            border-bottom: none;
-        }
-
-        /* [추가됨] 가격 텍스트 강조 */
-        .price-item span:last-child {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-        
-        /* 동적 섹션 */
-        .hidden {
-            display: none;
-        }
-        
-        .dynamic-section {
             background-color: #f8f9fa;
             border: 1px solid var(--border-color);
             border-radius: 12px;
             padding: 1.5rem;
-            margin-top: 1rem;
-            animation: fadeIn 0.3s ease-in-out;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-5px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .calculation-box {
-            background: white;
-            padding: 1.2rem;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            margin-top: 1rem;
-        }
-        
-        .calculation-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
             font-size: 0.95rem;
             color: var(--text-sub);
         }
         
-        .calculation-total {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 2px solid var(--border-color);
+        .consent-box strong, .policy-box h4, .photo-consent-box h4, .price-info h4 {
+            color: var(--primary-dark);
             font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--primary);
-        }
-        
-        /* 연락처 및 하단 */
-        .contact-info {
-            margin-top: 3rem;
-            text-align: center;
-            color: var(--text-sub);
-            font-size: 0.9rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
-        }
-        
-        /* 성공 메시지 팝업 */
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.6);
-            z-index: 1000;
-            backdrop-filter: blur(3px);
-        }
-        
-        .success-message {
-            display: none;
-            position: fixed;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            padding: 2.5rem;
-            border-radius: 16px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-            z-index: 1001;
-            width: 90%;
-            max-width: 450px;
-            text-align: center;
-        }
-        
-        .success-message.show, .overlay.show {
             display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
         }
         
-        .success-icon {
-            font-size: 3.5rem;
-            color: var(--success);
-            margin-bottom: 1rem;
-        }
+        .policy-box table { width: 100%; border-collapse: collapse; margin: 1rem 0; background: white; font-size: 0.9rem; }
+        .policy-box th { background-color: #eef2f5; color: var(--primary-dark); font-weight: 600; padding: 0.8rem; border: 1px solid var(--border-color); }
+        .policy-box td { padding: 0.8rem; text-align: center; border: 1px solid var(--border-color); }
         
-        .close-btn {
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            padding: 0.8rem 2rem;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 600;
-            margin-top: 1.5rem;
+        .form-group { margin-bottom: 1.8rem; }
+        label { display: block; margin-bottom: 0.6rem; font-weight: 600; color: var(--text-main); font-size: 0.95rem; }
+        .required { color: var(--danger); margin-left: 3px; font-weight: bold; }
+        
+        input[type="text"], input[type="email"], input[type="tel"], select, textarea {
+            width: 100%; padding: 0.9rem 1rem; border: 1px solid var(--border-color);
+            border-radius: 8px; font-size: 1rem; font-family: inherit;
+            transition: all 0.2s ease; background-color: #fff;
         }
+        input:focus, select:focus, textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(26, 123, 160, 0.1); }
+        input[readonly] { background-color: #f1f3f5; color: var(--text-sub); cursor: default; }
+        
+        .checkbox-group, .radio-group { display: flex; flex-direction: column; gap: 0.8rem; }
+        .checkbox-item, .radio-item {
+            display: flex; align-items: center; padding: 1rem;
+            border: 1px solid var(--border-color); border-radius: 8px;
+            cursor: pointer; transition: all 0.2s; background: white;
+        }
+        .checkbox-item:hover, .radio-item:hover { border-color: var(--primary); background-color: #f0f7fa; transform: translateY(-1px); }
+        .checkbox-item input, .radio-item input { width: 18px; height: 18px; margin-right: 12px; accent-color: var(--primary); }
+        
+        .submit-btn {
+            width: 100%; padding: 1.2rem;
+            background: linear-gradient(to right, var(--primary), var(--primary-dark));
+            color: white; border: none; border-radius: 8px;
+            font-size: 1.1rem; font-weight: 700; cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s; margin-top: 1rem;
+        }
+        .submit-btn:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(26, 123, 160, 0.3); }
+        .submit-btn:disabled { background: #ccc; cursor: not-allowed; transform: none; }
+        
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+        
+        .price-item { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; padding: 1.2rem 0; border-bottom: 1px dashed rgba(0,0,0,0.1); font-size: 0.95rem; color: var(--text-sub); }
+        .price-item:last-child { border-bottom: none; }
+        .price-item span:last-child { font-size: 1.1rem; font-weight: 700; color: var(--primary); }
+        
+        .hidden { display: none; }
+        .dynamic-section { background-color: #f8f9fa; border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem; margin-top: 1rem; animation: fadeIn 0.3s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .calculation-box { background: white; padding: 1.2rem; border-radius: 8px; border: 1px solid var(--border-color); margin-top: 1rem; }
+        .calculation-row { display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.95rem; color: var(--text-sub); }
+        .calculation-total { display: flex; justify-content: space-between; margin-top: 1rem; padding-top: 1rem; border-top: 2px solid var(--border-color); font-weight: 700; font-size: 1.1rem; color: var(--primary); }
+        
+        .contact-info { margin-top: 3rem; text-align: center; color: var(--text-sub); font-size: 0.9rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+        
+        .overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); z-index: 1000; backdrop-filter: blur(3px); }
+        .success-message { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 2.5rem; border-radius: 16px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); z-index: 1001; width: 90%; max-width: 450px; text-align: center; }
+        .success-message.show, .overlay.show { display: block; }
+        .success-icon { font-size: 3.5rem; color: var(--accent); margin-bottom: 1rem; }
+        .close-btn { background-color: var(--primary); color: white; border: none; padding: 0.8rem 2rem; border-radius: 6px; cursor: pointer; font-weight: 600; margin-top: 1.5rem; }
 
-        /* 모바일 대응 */
         @media (max-width: 768px) {
             .header { padding: 2rem 1.5rem; }
             .form-content { padding: 2rem 1.5rem; }
@@ -420,11 +175,6 @@
             신청해 주셔서 감사합니다.<br>
             입금 확인 후 최종 완료 메일을 보내드립니다.
         </p>
-        <div style="background:#f8f9fa; padding:1rem; border-radius:8px; font-size:0.9rem; text-align:left;">
-            <strong>수정 방법:</strong><br>
-            1. 동일한 이메일로 재등록 (자동 갱신)<br>
-            2. 운영사무국 문의
-        </div>
         <button class="close-btn" onclick="closeSuccessMessage()">확인</button>
     </div>
 
@@ -444,7 +194,6 @@
         <form class="form-content" id="registrationForm">
             <div class="section">
                 <h2 class="section-title">개인정보 수집 및 이용 동의</h2>
-                
                 <div class="consent-box">
                     <strong>개인정보보호법 준수 안내</strong>
                     <p style="margin-top:0.5rem; font-size:0.9rem;">
@@ -453,7 +202,6 @@
                         보유 기간: 행사 종료 후 6개월 (이후 파기)
                     </p>
                 </div>
-                
                 <div class="form-group">
                     <label>동의 여부 <span class="required">*</span></label>
                     <div class="radio-group">
@@ -471,7 +219,6 @@
 
             <div class="section">
                 <h2 class="section-title">사진 촬영 및 사용 동의</h2>
-                
                 <div class="photo-consent-box">
                     <h4>촬영 및 활용 안내</h4>
                     <ul style="list-style: inside; padding:0; margin-top:0.5rem;">
@@ -479,7 +226,6 @@
                         <li>웹사이트 및 관련 자료 게재</li>
                     </ul>
                 </div>
-                
                 <div class="form-group">
                     <label>동의 여부 <span class="required">*</span></label>
                     <div class="radio-group">
@@ -497,7 +243,6 @@
             
             <div class="section">
                 <h2 class="section-title">취소 및 환불 정책</h2>
-                
                 <div class="policy-box">
                     <table>
                         <thead>
@@ -509,14 +254,13 @@
                         <tbody>
                             <tr><td>60~46일전</td><td>70%</td></tr>
                             <tr><td>45~31일전</td><td>50%</td></tr>
-                            <tr><td>30~당일</td><td>환불불가</td></tr>
+                            <tr><td>30~당일</td><td style="color:var(--danger); font-weight:bold;">환불불가</td></tr>
                         </tbody>
                     </table>
                     <p style="font-size:0.9rem; margin-top:0.5rem;">
                         * 취소 신청: 운영사무국 이메일 (moonjkim01@gmail.com)
                     </p>
                 </div>
-                
                 <div class="form-group">
                     <label>동의 여부 <span class="required">*</span></label>
                     <div class="radio-group">
@@ -534,25 +278,21 @@
             
             <div class="section">
                 <h2 class="section-title">참석자 정보</h2>
-                
                 <div class="info-grid">
                     <div class="form-group">
                         <label for="name">성함 (Full Name) <span class="required">*</span></label>
                         <input type="text" id="name" name="name" required placeholder="홍길동">
                     </div>
-                    
                     <div class="form-group">
                         <label for="company">소속 회사 (Company) <span class="required">*</span></label>
                         <input type="text" id="company" name="company" required placeholder="㈜바이오테크">
                     </div>
                 </div>
-                
                 <div class="info-grid">
                     <div class="form-group">
                         <label for="email">이메일 (Email) <span class="required">*</span></label>
                         <input type="email" id="email" name="email" required placeholder="example@biotech.com">
                     </div>
-                    
                     <div class="form-group">
                         <label for="phone">휴대폰 번호 (Mobile Number) <span class="required">*</span></label>
                         <input type="tel" id="phone" name="phone" required placeholder="010-1234-5678">
@@ -562,76 +302,36 @@
             
             <div class="section">
                 <h2 class="section-title">네트워킹 & 포럼 운영</h2>
-                
                 <div class="form-group">
                     <label>관심 있는 주제 (복수 선택 가능) <span class="required">*</span></label>
                     <div class="checkbox-group">
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="topic1" name="topics" value="자금 조달 / Runway / Capital 전략">
-                            <label for="topic1" style="margin:0; cursor:pointer;">자금 조달 / Runway / Capital 전략</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="topic2" name="topics" value="파트너십 / 기술·사업 Deal">
-                            <label for="topic2" style="margin:0; cursor:pointer;">파트너십 / 기술·사업 Deal</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="topic3" name="topics" value="조직 운영 / 인재 / 글로벌 팀">
-                            <label for="topic3" style="margin:0; cursor:pointer;">조직 운영 / 인재 / 글로벌 팀</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="topic4" name="topics" value="규제 / 정책 / 외부 환경 변화">
-                            <label for="topic4" style="margin:0; cursor:pointer;">규제 / 정책 / 외부 환경 변화</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="topic5" name="topics" value="R&D 전략: 플랫폼 vs 에셋 / Pivot 여부 결정">
-                            <label for="topic5" style="margin:0; cursor:pointer;">R&D 전략: 플랫폼 vs 에셋 / Pivot 여부 결정</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="topic6" name="topics" value="CEO로서의 의사결정과 리더십">
-                            <label for="topic6" style="margin:0; cursor:pointer;">CEO로서의 의사결정과 리더십</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="topic7" name="topics" value="특정 주제 없이 자유 토론">
-                            <label for="topic7" style="margin:0; cursor:pointer;">특정 주제 없이 자유 토론</label>
-                        </div>
+                        <div class="checkbox-item"><input type="checkbox" id="topic1" name="topics" value="자금 조달"><label for="topic1" style="margin:0; cursor:pointer;">자금 조달 / Runway / Capital 전략</label></div>
+                        <div class="checkbox-item"><input type="checkbox" id="topic2" name="topics" value="파트너십"><label for="topic2" style="margin:0; cursor:pointer;">파트너십 / 기술·사업 Deal</label></div>
+                        <div class="checkbox-item"><input type="checkbox" id="topic3" name="topics" value="조직 운영"><label for="topic3" style="margin:0; cursor:pointer;">조직 운영 / 인재 / 글로벌 팀</label></div>
+                        <div class="checkbox-item"><input type="checkbox" id="topic4" name="topics" value="규제"><label for="topic4" style="margin:0; cursor:pointer;">규제 / 정책 / 외부 환경 변화</label></div>
+                        <div class="checkbox-item"><input type="checkbox" id="topic5" name="topics" value="R&D"><label for="topic5" style="margin:0; cursor:pointer;">R&D 전략: 플랫폼 vs 에셋</label></div>
+                        <div class="checkbox-item"><input type="checkbox" id="topic6" name="topics" value="CEO 리더십"><label for="topic6" style="margin:0; cursor:pointer;">CEO로서의 의사결정과 리더십</label></div>
+                        <div class="checkbox-item"><input type="checkbox" id="topic7" name="topics" value="자유 토론"><label for="topic7" style="margin:0; cursor:pointer;">특정 주제 없이 자유 토론</label></div>
                     </div>
                 </div>
-                
                 <div class="form-group">
                     <label for="discussion-topic">참여자 간 논의 희망 주제 (선택)</label>
                     <textarea id="discussion-topic" name="discussion-topic" placeholder="자유롭게 작성해 주세요"></textarea>
                 </div>
-                
                 <div class="form-group">
-                    <label>참여 희망 역할 (경험과 관점 공유) <span class="required">*</span></label>
+                    <label>참여 희망 역할 <span class="required">*</span></label>
                     <div class="checkbox-group">
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="role1" name="roles" value="Fireside Chat 패널">
-                            <label for="role1" style="margin:0; cursor:pointer;">Fireside Chat 패널</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="role2" name="roles" value="세션 토론 패널">
-                            <label for="role2" style="margin:0; cursor:pointer;">세션 토론 패널</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="role3" name="roles" value="세션 모더레이터">
-                            <label for="role3" style="margin:0; cursor:pointer;">세션 모더레이터</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="role4" name="roles" value="경험 공유">
-                            <label for="role4" style="margin:0; cursor:pointer;">짧은 경험 공유 (5-7분)</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="role5" name="roles" value="참여만 희망">
-                            <label for="role5" style="margin:0; cursor:pointer;">참여만 희망</label>
-                        </div>
+                        <div class="checkbox-item"><input type="checkbox" id="role1" name="roles" value="Fireside Chat"><label for="role1" style="margin:0; cursor:pointer;">Fireside Chat 패널</label></div>
+                        <div class="checkbox-item"><input type="checkbox" id="role2" name="roles" value="세션 토론"><label for="role2" style="margin:0; cursor:pointer;">세션 토론 패널</label></div>
+                        <div class="checkbox-item"><input type="checkbox" id="role3" name="roles" value="모더레이터"><label for="role3" style="margin:0; cursor:pointer;">세션 모더레이터</label></div>
+                        <div class="checkbox-item"><input type="checkbox" id="role4" name="roles" value="경험 공유"><label for="role4" style="margin:0; cursor:pointer;">짧은 경험 공유 (5-7분)</label></div>
+                        <div class="checkbox-item"><input type="checkbox" id="role5" name="roles" value="참여만"><label for="role5" style="margin:0; cursor:pointer;">참여만 희망</label></div>
                     </div>
                 </div>
             </div>
             
             <div class="section">
                 <h2 class="section-title">참석 일정</h2>
-                
                 <div class="form-group">
                     <label for="attendance-plan">전체 참석 계획 <span class="required">*</span></label>
                     <select id="attendance-plan" name="attendance-plan" required>
@@ -641,33 +341,16 @@
                         <option value="아직 조율 중">아직 조율 중</option>
                     </select>
                 </div>
-                
                 <div class="form-group">
                     <label>세부 참석 일정 (복수 선택) <span class="required">*</span></label>
                     <div class="checkbox-group">
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="date1" name="dates" value="2/27(금) 칵테일 리셉션 & 만찬">
-                            <label for="date1" style="margin:0; cursor:pointer;">2/27(금) 칵테일 리셉션 & 만찬</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="date2" name="dates" value="2/27(금) Post-event Gathering">
-                            <label for="date2" style="margin:0; cursor:pointer;">2/27(금) Post-event Gathering</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="date3" name="dates" value="2/28(토) CEO Forum">
-                            <label for="date3" style="margin:0; cursor:pointer;">2/28(토) CEO Forum (전일)</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="date4" name="dates" value="2/28(토) Post-event Gathering">
-                            <label for="date4" style="margin:0; cursor:pointer;">2/28(토) Post-event Gathering</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="date5" name="dates" value="미정">
-                            <label for="date5" style="margin:0; cursor:pointer;">미정</label>
-                        </div>
+                        <div class="checkbox-item"><input type="checkbox" id="date1" name="dates" value="2/27(금) 리셉션"><label for="date1" style="margin:0; cursor:pointer;">2/27(금) 칵테일 리셉션 & 만찬</label></div>
+                        <div class="checkbox-item"><input type="checkbox" id="date2" name="dates" value="2/27(금) Gathering"><label for="date2" style="margin:0; cursor:pointer;">2/27(금) Post-event Gathering</label></div>
+                        <div class="checkbox-item"><input type="checkbox" id="date3" name="dates" value="2/28(토) Forum"><label for="date3" style="margin:0; cursor:pointer;">2/28(토) CEO Forum (전일)</label></div>
+                        <div class="checkbox-item"><input type="checkbox" id="date4" name="dates" value="2/28(토) Gathering"><label for="date4" style="margin:0; cursor:pointer;">2/28(토) Post-event Gathering</label></div>
+                        <div class="checkbox-item"><input type="checkbox" id="date5" name="dates" value="미정"><label for="date5" style="margin:0; cursor:pointer;">미정</label></div>
                     </div>
                 </div>
-                
                 <div class="form-group">
                     <label for="allergy">식이 제한 사항 (선택)</label>
                     <input type="text" id="allergy" name="allergy" placeholder="알레르기, 채식 여부 등">
@@ -676,7 +359,6 @@
             
             <div class="section">
                 <h2 class="section-title">결제 정보</h2>
-                
                 <div class="price-info">
                     <h4>참가비 안내</h4>
                     <div class="price-item">
@@ -692,24 +374,14 @@
                 <div class="form-group">
                     <label>숙박 신청 여부 <span class="required">*</span></label>
                     <div class="radio-group">
-                        <div class="radio-item">
-                            <input type="radio" id="accommodation-yes" name="accommodation" value="신청" required>
-                            <label for="accommodation-yes" style="margin:0; cursor:pointer;">숙박 신청</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="accommodation-no" name="accommodation" value="미신청">
-                            <label for="accommodation-no" style="margin:0; cursor:pointer;">숙박 미신청</label>
-                        </div>
+                        <div class="radio-item"><input type="radio" id="accommodation-yes" name="accommodation" value="신청" required><label for="accommodation-yes" style="margin:0; cursor:pointer;">숙박 신청</label></div>
+                        <div class="radio-item"><input type="radio" id="accommodation-no" name="accommodation" value="미신청"><label for="accommodation-no" style="margin:0; cursor:pointer;">숙박 미신청</label></div>
                     </div>
                 </div>
                 
                 <div id="accommodation-details" class="hidden dynamic-section">
                     <h4 style="color:var(--primary); margin-bottom:1rem;">숙박 상세 정보</h4>
-                    <p style="margin-bottom:1rem; font-size:0.95rem;">
-                        장소: 디아넥스호텔 (제주)<br>
-                        가격: 1박 300,000원 (VAT 별도)
-                    </p>
-                    
+                    <p style="margin-bottom:1rem; font-size:0.95rem;">장소: 디아넥스호텔 (제주) / 가격: 1박 300,000원 (VAT 별도)</p>
                     <div class="form-group">
                         <label for="nights">숙박 박수</label>
                         <select id="nights" name="nights">
@@ -718,7 +390,6 @@
                             <option value="2">2박</option>
                         </select>
                     </div>
-                    
                     <div id="accommodation-calculation" style="display: none; padding-top:1rem; border-top:1px solid #ddd;">
                         <div style="display:flex; justify-content:space-between; font-weight:700; color:var(--primary);">
                             <span>숙박비 소계</span>
@@ -730,14 +401,8 @@
                 <div class="form-group">
                     <label>결제 방법 <span class="required">*</span></label>
                     <div class="radio-group">
-                        <div class="radio-item">
-                            <input type="radio" id="payment-card" name="payment-method" value="신용카드 결제" required>
-                            <label for="payment-card" style="margin:0; cursor:pointer;">신용카드 결제 (별도 안내)</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="payment-invoice" name="payment-method" value="계좌 이체">
-                            <label for="payment-invoice" style="margin:0; cursor:pointer;">계좌 이체 (세금계산서 발행)</label>
-                        </div>
+                        <div class="radio-item"><input type="radio" id="payment-card" name="payment-method" value="신용카드 결제" required><label for="payment-card" style="margin:0; cursor:pointer;">신용카드 결제 (별도 안내)</label></div>
+                        <div class="radio-item"><input type="radio" id="payment-invoice" name="payment-method" value="계좌 이체"><label for="payment-invoice" style="margin:0; cursor:pointer;">계좌 이체 (세금계산서 발행)</label></div>
                     </div>
                 </div>
                 
@@ -751,14 +416,8 @@
                     <div class="form-group">
                         <label>세금계산서 발행 여부 <span class="required">*</span></label>
                         <div class="radio-group" style="flex-direction:row;">
-                            <div class="radio-item" style="flex:1;">
-                                <input type="radio" id="invoice-yes" name="invoice-needed" value="필요">
-                                <label for="invoice-yes" style="margin:0; cursor:pointer;">발행 필요</label>
-                            </div>
-                            <div class="radio-item" style="flex:1;">
-                                <input type="radio" id="invoice-no" name="invoice-needed" value="불필요">
-                                <label for="invoice-no" style="margin:0; cursor:pointer;">발행 불필요</label>
-                            </div>
+                            <div class="radio-item" style="flex:1;"><input type="radio" id="invoice-yes" name="invoice-needed" value="필요"><label for="invoice-yes" style="margin:0; cursor:pointer;">발행 필요</label></div>
+                            <div class="radio-item" style="flex:1;"><input type="radio" id="invoice-no" name="invoice-needed" value="불필요"><label for="invoice-no" style="margin:0; cursor:pointer;">발행 불필요</label></div>
                         </div>
                     </div>
 
@@ -770,264 +429,110 @@
                     
                     <div id="invoice-info" class="hidden">
                         <div class="info-grid">
-                            <div class="form-group">
-                                <label for="company-name">회사명 (법인명) <span class="required">*</span></label>
-                                <input type="text" id="company-name" name="company-name">
-                            </div>
-                            <div class="form-group">
-                                <label for="business-number">사업자등록번호 <span class="required">*</span></label>
-                                <input type="text" id="business-number" name="business-number">
-                            </div>
+                            <div class="form-group"><label for="company-name">회사명 (법인명) <span class="required">*</span></label><input type="text" id="company-name" name="company-name"></div>
+                            <div class="form-group"><label for="business-number">사업자등록번호 <span class="required">*</span></label><input type="text" id="business-number" name="business-number"></div>
                         </div>
-
                         <div id="calculated-costs" class="calculation-box">
-                            <div class="calculation-row">
-                                <span>공급가액</span>
-                                <input type="text" id="supply-value" readonly style="text-align:right; width:120px; border:none; background:transparent;">
-                            </div>
-                            <div class="calculation-row">
-                                <span>부가세 (10%)</span>
-                                <input type="text" id="vat-value" readonly style="text-align:right; width:120px; border:none; background:transparent;">
-                            </div>
-                            <div class="calculation-total">
-                                <span>합계 (Total)</span>
-                                <input type="text" id="total-value" readonly style="text-align:right; width:150px; border:none; background:transparent; font-weight:700; color:var(--primary);">
-                            </div>
+                            <div class="calculation-row"><span>공급가액</span><input type="text" id="supply-value" readonly style="text-align:right; width:120px; border:none; background:transparent;"></div>
+                            <div class="calculation-row"><span>부가세 (10%)</span><input type="text" id="vat-value" readonly style="text-align:right; width:120px; border:none; background:transparent;"></div>
+                            <div class="calculation-total"><span>합계 (Total)</span><input type="text" id="total-value" readonly style="text-align:right; width:150px; border:none; background:transparent; font-weight:700; color:var(--primary);"></div>
                         </div>
-
                         <div class="info-grid">
-                            <div class="form-group">
-                                <label for="invoice-name">담당자 이름 <span class="required">*</span></label>
-                                <input type="text" id="invoice-name" name="invoice-name">
-                            </div>
-                            <div class="form-group">
-                                <label for="invoice-phone">담당자 연락처 <span class="required">*</span></label>
-                                <input type="tel" id="invoice-phone" name="invoice-phone">
-                            </div>
+                            <div class="form-group"><label for="invoice-name">담당자 이름 <span class="required">*</span></label><input type="text" id="invoice-name" name="invoice-name"></div>
+                            <div class="form-group"><label for="invoice-phone">담당자 연락처 <span class="required">*</span></label><input type="tel" id="invoice-phone" name="invoice-phone"></div>
                         </div>
-                        <div class="form-group">
-                            <label for="invoice-email">담당자 이메일 <span class="required">*</span></label>
-                            <input type="email" id="invoice-email" name="invoice-email">
-                        </div>
+                        <div class="form-group"><label for="invoice-email">담당자 이메일 <span class="required">*</span></label><input type="email" id="invoice-email" name="invoice-email"></div>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="depositor-name">입금자명 (신청자와 다를 경우)</label>
-                        <input type="text" id="depositor-name" name="depositor-name">
-                    </div>
+                    <div class="form-group"><label for="depositor-name">입금자명 (신청자와 다를 경우)</label><input type="text" id="depositor-name" name="depositor-name"></div>
                 </div>
             </div>
             
             <button type="submit" class="submit-btn">참가 신청하기</button>
-            
-            <div class="contact-info">
-                <p><strong>문의처</strong> 김문정|moonjkim01@gmail.com</p>
-            </div>
+            <div class="contact-info"><p><strong>문의처</strong> 김문정 | moonjkim01@gmail.com</p></div>
         </form>
     </div>
     
     <script>
         const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxVpxnuF6bfAO00WJ51dklmC7JvTXXePg9R5UzqcM2Pi18iQhV81YDYwJPo8MSkFyBN/exec';
-        
-        function showSuccessMessage() {
-            document.getElementById('overlay').classList.add('show');
-            document.getElementById('successMessage').classList.add('show');
-        }
-        
-        function closeSuccessMessage() {
-            document.getElementById('overlay').classList.remove('show');
-            document.getElementById('successMessage').classList.remove('show');
-        }
+        function showSuccessMessage() { document.getElementById('overlay').classList.add('show'); document.getElementById('successMessage').classList.add('show'); }
+        function closeSuccessMessage() { document.getElementById('overlay').classList.remove('show'); document.getElementById('successMessage').classList.remove('show'); }
         
         document.getElementById('registrationForm').addEventListener('submit', async function(e) {
             e.preventDefault();
-            
-            if (GOOGLE_SCRIPT_URL === 'YOUR_SCRIPT_URL_HERE') {
-                alert('⚠️ Google Apps Script URL 설정이 필요합니다.');
-                return;
-            }
-            
             const privacyConsent = document.querySelector('input[name="privacy-consent"]:checked');
-            if (!privacyConsent || privacyConsent.value !== 'agree') {
-                alert('개인정보 수집 및 이용에 동의가 필요합니다.');
-                return;
-            }
-
+            if (!privacyConsent || privacyConsent.value !== 'agree') { alert('개인정보 수집 동의가 필요합니다.'); return; }
             const photoConsent = document.querySelector('input[name="photo-consent"]:checked');
-            if (!photoConsent) {
-                alert('사진 촬영 동의 여부를 선택해 주세요.');
-                return;
-            }
-            
+            if (!photoConsent) { alert('사진 촬영 동의를 선택해주세요.'); return; }
             const refundConsent = document.querySelector('input[name="refund-consent"]:checked');
-            if (!refundConsent || refundConsent.value !== 'agree') {
-                alert('취소 및 환불 정책 동의가 필요합니다.');
-                return;
-            }
+            if (!refundConsent || refundConsent.value !== 'agree') { alert('환불 정책 동의가 필요합니다.'); return; }
             
-            const topics = document.querySelectorAll('input[name="topics"]:checked');
-            if (topics.length === 0) {
-                alert('관심 주제를 하나 이상 선택해 주세요.');
-                return;
-            }
-            
-            const roles = document.querySelectorAll('input[name="roles"]:checked');
-            if (roles.length === 0) {
-                alert('역할을 하나 이상 선택해 주세요.');
-                return;
-            }
-            
-            const dates = document.querySelectorAll('input[name="dates"]:checked');
-            if (dates.length === 0) {
-                alert('참석 일정을 하나 이상 선택해 주세요.');
-                return;
-            }
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = '처리 중...'; submitBtn.disabled = true;
             
             const formData = new FormData(this);
             const data = { timestamp: new Date().toISOString() };
             const checkboxFields = ['topics', 'roles', 'dates'];
-            
             for (let [key, value] of formData.entries()) {
-                if (checkboxFields.includes(key)) {
-                    if (!data[key]) data[key] = [];
-                    data[key].push(value);
-                } else {
-                    data[key] = value;
-                }
+                if (checkboxFields.includes(key)) { if (!data[key]) data[key] = []; data[key].push(value); }
+                else { data[key] = value; }
             }
-            
-            const submitBtn = this.querySelector('.submit-btn');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = '처리 중...';
-            submitBtn.disabled = true;
             
             try {
-                await fetch(GOOGLE_SCRIPT_URL, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(data)
-                });
-                showSuccessMessage();
-                this.reset();
-                
-                document.getElementById('invoice-details').classList.add('hidden');
-                document.getElementById('invoice-info').classList.add('hidden');
-                document.getElementById('no-invoice-cost').classList.add('hidden');
-                document.getElementById('accommodation-details').classList.add('hidden');
+                await fetch(GOOGLE_SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+                showSuccessMessage(); this.reset();
+                document.querySelectorAll('.dynamic-section').forEach(el => el.classList.add('hidden'));
                 document.getElementById('accommodation-calculation').style.display = 'none';
-                
-            } catch (error) {
-                console.error('Error:', error);
-                alert('오류가 발생했습니다. 운영사무국으로 문의 바랍니다.');
-            } finally {
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }
+            } catch (error) { alert('오류가 발생했습니다.'); } 
+            finally { submitBtn.textContent = originalText; submitBtn.disabled = false; }
         });
-        
-        document.querySelectorAll('input[name="accommodation"]').forEach(radio => {
-            radio.addEventListener('change', function() {
-                const accommodationDetails = document.getElementById('accommodation-details');
-                if (this.value === '신청') {
-                    accommodationDetails.classList.remove('hidden');
-                } else {
-                    accommodationDetails.classList.add('hidden');
-                    document.getElementById('nights').value = "0";
-                }
-                calculateInvoiceAmounts();
-            });
-        });
-        
-        function calculateAccommodation() {
-            const nights = parseInt(document.getElementById('nights').value) || 0;
-            const pricePerNight = 300000;
 
+        document.querySelectorAll('input[name="accommodation"]').forEach(r => r.addEventListener('change', function() {
+            const details = document.getElementById('accommodation-details');
+            if (this.value === '신청') details.classList.remove('hidden'); else { details.classList.add('hidden'); document.getElementById('nights').value = "0"; }
+            calculateInvoiceAmounts();
+        }));
+        
+        document.getElementById('nights').addEventListener('change', function() {
+            const nights = parseInt(this.value) || 0;
             if (nights > 0) {
-                const total = nights * pricePerNight;
-                document.getElementById('accommodation-total').textContent = total.toLocaleString() + '원';
+                document.getElementById('accommodation-total').textContent = (nights * 300000).toLocaleString() + '원';
                 document.getElementById('accommodation-calculation').style.display = 'block';
+            } else { document.getElementById('accommodation-calculation').style.display = 'none'; }
+            calculateInvoiceAmounts();
+        });
+
+        document.querySelectorAll('input[name="payment-method"]').forEach(r => r.addEventListener('change', function() {
+            const d = document.getElementById('invoice-details');
+            if (this.value === '계좌 이체') d.classList.remove('hidden'); else d.classList.add('hidden');
+        }));
+
+        document.querySelectorAll('input[name="invoice-needed"]').forEach(r => r.addEventListener('change', function() {
+            const info = document.getElementById('invoice-info');
+            const noCost = document.getElementById('no-invoice-cost');
+            const ids = ['company-name', 'business-number', 'invoice-name', 'invoice-phone', 'invoice-email'];
+            if (this.value === '필요') {
+                info.classList.remove('hidden'); noCost.classList.add('hidden');
+                ids.forEach(id => document.getElementById(id).setAttribute('required', ''));
             } else {
-                document.getElementById('accommodation-calculation').style.display = 'none';
+                info.classList.add('hidden'); noCost.classList.remove('hidden');
+                ids.forEach(id => document.getElementById(id).removeAttribute('required'));
             }
             calculateInvoiceAmounts();
-        }
-        document.getElementById('nights').addEventListener('change', calculateAccommodation);
-
-        document.querySelectorAll('input[name="payment-method"]').forEach(radio => {
-            radio.addEventListener('change', function() {
-                const invoiceDetails = document.getElementById('invoice-details');
-                if (this.value === '계좌 이체') {
-                    invoiceDetails.classList.remove('hidden');
-                } else {
-                    invoiceDetails.classList.add('hidden');
-                }
-            });
-        });
-
-        document.querySelectorAll('input[name="invoice-needed"]').forEach(radio => {
-            radio.addEventListener('change', function() {
-                const invoiceInfo = document.getElementById('invoice-info');
-                const noInvoiceCost = document.getElementById('no-invoice-cost');
-                
-                // 세금계산서 필수 항목들
-                const requiredFields = [
-                    'company-name', 
-                    'business-number', 
-                    'invoice-name', 
-                    'invoice-phone', 
-                    'invoice-email'
-                ];
-                
-                if (this.value === '필요') {
-                    invoiceInfo.classList.remove('hidden');
-                    noInvoiceCost.classList.add('hidden');
-                    
-                    // 필수 속성 추가
-                    requiredFields.forEach(id => {
-                        document.getElementById(id).setAttribute('required', '');
-                    });
-                } else {
-                    invoiceInfo.classList.add('hidden');
-                    noInvoiceCost.classList.remove('hidden');
-                    
-                    // 필수 속성 제거
-                    requiredFields.forEach(id => {
-                        document.getElementById(id).removeAttribute('required');
-                    });
-                }
-                calculateInvoiceAmounts();
-            });
-        });
+        }));
 
         function calculateInvoiceAmounts() {
-            const registrationFee = 1000000; 
-            const pricePerNight = 300000;
-            
+            const regFee = 1000000;
             let nights = 0;
-            const accommodationStatus = document.querySelector('input[name="accommodation"]:checked');
-
-            if (accommodationStatus && accommodationStatus.value === '신청') {
-                nights = parseInt(document.getElementById('nights').value) || 0;
-            }
-
-            const totalSupply = registrationFee + (nights * pricePerNight);
-            const totalVat = totalSupply * 0.1;
-            const grandTotal = totalSupply + totalVat;
-
-            document.getElementById('supply-value').value = totalSupply.toLocaleString() + "원";
-            document.getElementById('vat-value').value = totalVat.toLocaleString() + "원";
-            document.getElementById('total-value').value = grandTotal.toLocaleString() + "원";
-            document.getElementById('deposit-total-value').value = totalSupply.toLocaleString() + "원";
+            if (document.querySelector('input[name="accommodation"]:checked')?.value === '신청') nights = parseInt(document.getElementById('nights').value) || 0;
+            const supply = regFee + (nights * 300000);
+            const vat = supply * 0.1;
+            document.getElementById('supply-value').value = supply.toLocaleString() + "원";
+            document.getElementById('vat-value').value = vat.toLocaleString() + "원";
+            document.getElementById('total-value').value = (supply + vat).toLocaleString() + "원";
+            document.getElementById('deposit-total-value').value = supply.toLocaleString() + "원";
         }
-        
-        document.getElementById('privacy-disagree').addEventListener('change', function() {
-            if (this.checked) alert('참가 신청을 위해서는 동의가 필요합니다.');
-        });
-        
-        document.getElementById('refund-disagree').addEventListener('change', function() {
-            if (this.checked) alert('참가 신청을 위해서는 동의가 필요합니다.');
-        });
     </script>
 </body>
 </html>
