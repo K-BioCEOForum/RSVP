@@ -48,18 +48,18 @@
         
         .logo-container { margin-bottom: 0; display: flex; justify-content: center; }
         
-        /* [수정] 로고 그림자 강화 (입체감) */
+        /* 로고 그림자 (입체감 유지) */
         .logo { 
             max-width: 600px; 
             width: 100%; 
             height: auto; 
             display: block; 
-            filter: drop-shadow(0 12px 24px rgba(0,0,0,0.35)); /* 그림자 더 진하게 수정 */
+            filter: drop-shadow(0 12px 24px rgba(0,0,0,0.35)); 
             margin-bottom: -10px; 
-            transform: translateZ(0); /* 입체감 렌더링 최적화 */
+            transform: translateZ(0);
         }
         
-        /* [PC용 기본 스타일] 헤더 정보 */
+        /* [PC용 기본 스타일] */
         .header-info {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(5px);
@@ -72,7 +72,6 @@
             margin-top: 20px; 
         }
         
-        /* PC에서는 한 줄로 표시 (flex 아님) */
         .info-row { margin: 0.5rem 0; }
         .info-label { color: #ffd54f; font-weight: 600; margin-right: 0.5rem; font-size: 1.1rem; }
         .info-content { color: white; }
@@ -114,7 +113,6 @@
             font-size: 1.1rem;
         }
 
-        /* [PC] 안내 문구 폰트 크기 */
         .info-text-small {
             font-size: 0.9rem;
             margin-top: 0.5rem;
@@ -122,12 +120,10 @@
             line-height: 1.6;
         }
         
-        /* 정책 테이블 */
         .policy-box table { width: 100%; border-collapse: collapse; margin: 1rem 0; background: white; font-size: 0.95rem; }
         .policy-box th { background-color: #eef2f5; color: var(--primary-dark); font-weight: 600; padding: 0.8rem; border: 1px solid var(--border-color); }
         .policy-box td { padding: 0.8rem; text-align: center; border: 1px solid var(--border-color); }
 
-        /* 환불불가 빨간색 강조 */
         .refund-highlight { color: var(--danger); font-weight: bold; }
         
         .form-group { margin-bottom: 1.8rem; }
@@ -188,32 +184,38 @@
         /* ========================================= */
         @media (max-width: 768px) {
             body { padding: 1rem 0.5rem; }
-            .header { padding: 2rem 1rem; }
+            .header { padding: 2rem 0.5rem; /* [수정] 좌우 패딩 줄임 */ }
             .form-content { padding: 1.5rem 1rem; }
             .section { margin-bottom: 2.5rem; }
             .section-title { font-size: 1.3rem; margin-bottom: 1.2rem; }
             .section-title::before { height: 20px; }
             
-            /* 헤더 정보: 모바일에서 아주 작게 */
+            /* [수정] 헤더 정보: 너비 최대화, 여백 최소화 */
             .header-info {
-                padding: 1rem;
-                font-size: 11px; /* 모바일용 작은 폰트 */
-                width: 95%;
+                padding: 1rem 0.5rem; /* 내부 여백 줄임 */
+                width: 100%; /* 너비 꽉 채움 */
+                box-sizing: border-box;
             }
             
-            /* [수정됨] 모바일에서 '일정', '장소' 라벨 줄바꿈 처리 */
-            .info-row { margin-bottom: 8px; }
+            /* [수정] 모바일 라벨/내용 스타일 */
+            .info-row { margin-bottom: 10px; }
             .info-label { 
-                display: block; /* 줄바꿈 강제 */
-                margin-bottom: 3px; /* 내용과의 간격 */
-                font-size: 12px; 
+                display: block; 
+                margin-bottom: 2px;
+                font-size: 13px; /* 라벨 크기 약간 키움 */
             }
-            .info-content { display: block; }
+            .info-content { 
+                display: block; 
+                font-size: 12px; /* [요청] 글씨체 살짝 키움 (11px -> 12px) */
+                letter-spacing: -0.6px; /* [요청] 한 줄에 들어오도록 자간 좁힘 */
+                word-spacing: -1px; /* 어절 간격 좁힘 */
+                white-space: nowrap; /* 줄바꿈 방지 시도 (화면이 너무 좁으면 잘릴 수 있으나 최대한 유지) */
+            }
 
             /* 안내 박스 폰트 축소 */
             .consent-box, .policy-box, .photo-consent-box, .price-info { padding: 1rem; font-size: 0.9rem; }
             
-            /* 안내 문구(회색) 아주 작게 강제 적용 */
+            /* 안내 문구(회색) 아주 작게 */
             .info-text-small {
                 font-size: 10px !important; 
                 line-height: 1.4;
@@ -227,13 +229,11 @@
             /* 환불불가 텍스트 축소 */
             .refund-highlight { font-size: 11px; }
 
-            /* 입력 폼 간격 조정 */
             .form-group { margin-bottom: 1.5rem; }
             input[type="text"], input[type="email"], input[type="tel"], select, textarea { padding: 0.8rem; font-size: 0.95rem; }
             .checkbox-item, .radio-item { padding: 0.8rem; }
             .checkbox-group, .radio-group { gap: 0.6rem; }
 
-            /* 버튼 및 기타 */
             .submit-btn { padding: 1rem; font-size: 1rem; }
             .info-grid { grid-template-columns: 1fr; gap: 1.2rem; }
             .contact-info { margin-top: 2.5rem; padding-top: 1.5rem; font-size: 0.8rem; }
