@@ -26,7 +26,7 @@
             background-color: var(--bg-gray);
             color: var(--text-main);
             line-height: 1.6;
-            padding: 1rem 0.5rem; /* [수정] 전체 패딩 축소 */
+            padding: 1rem 0.5rem;
         }
         
         .container {
@@ -41,7 +41,7 @@
         .header {
             background: linear-gradient(135deg, #1a7ba0 0%, #0d4b63 100%);
             color: var(--white);
-            padding: 2rem 1rem; /* [수정] 헤더 패딩 축소 */
+            padding: 2rem 1rem;
             text-align: center;
         }
         
@@ -51,18 +51,18 @@
         .header-info {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(5px);
-            padding: 0.8rem 0.6rem; /* [수정] 내부 여백 대폭 축소 */
+            padding: 1rem;
             border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             display: inline-block;
             text-align: left;
-            font-size: 11px; /* [수정] 폰트 크기 대폭 축소 (11px) */
+            font-size: 11px; /* 폰트 크기 11px 고정 */
             margin-top: 10px; 
-            width: 95%; /* 모바일에서 거의 꽉 차게 */
+            width: 95%;
         }
         
-        .header-info div { margin: 0.2rem 0; letter-spacing: -0.5px; /* 자간 좁힘 */ }
-        .header-info strong { color: #ffd54f; font-weight: 600; margin-right: 0.3rem; }
+        .header-info div { margin: 0; letter-spacing: -0.3px; line-height: 1.5; }
+        .header-info strong { color: #ffd54f; font-weight: 600; display: block; margin-bottom: 2px; font-size: 12px; }
         
         .form-content { padding: 1.5rem 1rem; }
         .section { margin-bottom: 2.5rem; }
@@ -86,7 +86,7 @@
             background-color: #f8f9fa;
             border: 1px solid var(--border-color);
             border-radius: 12px;
-            padding: 1rem; /* 패딩 축소 */
+            padding: 1rem;
             margin-bottom: 1.5rem;
             font-size: 0.9rem;
             color: var(--text-sub);
@@ -97,17 +97,17 @@
             font-weight: 700;
             display: block;
             margin-bottom: 0.3rem;
-            font-size: 0.95rem; /* 제목 크기도 약간 조정 */
+            font-size: 0.95rem;
         }
 
-        /* [수정] 회색 안내 문구 아주 작게 (10px) */
+        /* 회색 안내 문구 아주 작게 (10px) */
         .consent-box p, .photo-consent-box ul, .policy-box p {
             font-size: 10px !important; 
-            line-height: 1.4;
+            line-height: 1.5;
             color: #888;
         }
         
-        .policy-box table { width: 100%; border-collapse: collapse; margin: 0.8rem 0; background: white; font-size: 11px; /* [수정] 표 내용 작게 */ }
+        .policy-box table { width: 100%; border-collapse: collapse; margin: 0.8rem 0; background: white; font-size: 11px; }
         .policy-box th { background-color: #eef2f5; color: var(--primary-dark); font-weight: 600; padding: 0.6rem; border: 1px solid var(--border-color); }
         .policy-box td { padding: 0.6rem; text-align: center; border: 1px solid var(--border-color); }
         
@@ -186,8 +186,14 @@
                 </div>
             </div>
             <div class="header-info">
-                <div><strong>일정</strong> 2026년 2월 27일(금) 3:30 PM - 3월 1일(일) 12:00 PM</div>
-                <div><strong>장소</strong> 디아넥스호텔 · 비오토피아 (제주)</div>
+                <div style="margin-bottom: 8px;">
+                    <strong>일정</strong>
+                    2026년 2월 27일(금) 3:30 PM - 3월 1일(일) 12:00 PM
+                </div>
+                <div>
+                    <strong>장소</strong>
+                    디아넥스호텔 · 비오토피아 (제주)
+                </div>
             </div>
         </div>
         
@@ -197,7 +203,8 @@
                 <div class="consent-box">
                     <strong>개인정보보호법 준수 안내</strong>
                     <p style="margin-top:0.3rem; font-size:10px;">
-                        수집 목적: 행사 운영 및 참가자 관리 / 수집 항목: 이름, 이메일, 연락처, 소속 등<br>
+                        수집 목적: 행사 운영 및 참가자 관리<br>
+                        수집 항목: 이름, 이메일, 연락처, 소속 등<br>
                         보유 기간: 행사 종료 후 6개월 (이후 파기)
                     </p>
                 </div>
@@ -448,7 +455,9 @@
             </div>
             
             <button type="submit" class="submit-btn">참가 신청하기</button>
-            <div class="contact-info"><p><strong>문의처</strong> 김문정 | moonjkim01@gmail.com</p></div>
+            <div class="contact-info">
+                <p><strong>문의처</strong> 김문정 | <a href="mailto:moonjkim01@gmail.com" style="color:inherit; text-decoration:underline;">moonjkim01@gmail.com</a></p>
+            </div>
         </form>
     </div>
     
