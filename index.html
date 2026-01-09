@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Korea Biotech CEO Forum 2026 - 참가신청 (Web)</title>
+    <title>Korea Biotech CEO Forum 2026 - 참가신청 (Mobile)</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Outfit:wght@300;400;600;700&display=swap');
         
@@ -26,7 +26,7 @@
             background-color: var(--bg-gray);
             color: var(--text-main);
             line-height: 1.6;
-            padding: 2rem 1rem;
+            padding: 1rem 0.5rem; /* [수정] 전체 패딩 축소 */
         }
         
         .container {
@@ -41,7 +41,7 @@
         .header {
             background: linear-gradient(135deg, #1a7ba0 0%, #0d4b63 100%);
             color: var(--white);
-            padding: 2rem 1.5rem;
+            padding: 2rem 1rem; /* [수정] 헤더 패딩 축소 */
             text-align: center;
         }
         
@@ -51,43 +51,44 @@
         .header-info {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(5px);
-            padding: 1.2rem 1.5rem;
+            padding: 0.8rem 0.6rem; /* [수정] 내부 여백 대폭 축소 */
             border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             display: inline-block;
             text-align: left;
-            font-size: 1.05rem;
+            font-size: 11px; /* [수정] 폰트 크기 대폭 축소 (11px) */
             margin-top: 10px; 
+            width: 95%; /* 모바일에서 거의 꽉 차게 */
         }
         
-        .header-info div { margin: 0.3rem 0; }
-        .header-info strong { color: #ffd54f; font-weight: 600; margin-right: 0.5rem; }
+        .header-info div { margin: 0.2rem 0; letter-spacing: -0.5px; /* 자간 좁힘 */ }
+        .header-info strong { color: #ffd54f; font-weight: 600; margin-right: 0.3rem; }
         
-        .form-content { padding: 3rem 2.5rem; }
-        .section { margin-bottom: 3.5rem; }
+        .form-content { padding: 1.5rem 1rem; }
+        .section { margin-bottom: 2.5rem; }
         
         .section-title {
             font-family: 'Outfit', sans-serif;
-            font-size: 1.6rem;
+            font-size: 1.3rem; 
             font-weight: 700;
             color: var(--primary-dark);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             display: flex;
             align-items: center;
         }
         
         .section-title::before {
-            content: ''; display: block; width: 6px; height: 24px;
-            background-color: var(--primary); margin-right: 12px; border-radius: 3px;
+            content: ''; display: block; width: 5px; height: 20px;
+            background-color: var(--primary); margin-right: 8px; border-radius: 3px;
         }
         
         .consent-box, .policy-box, .photo-consent-box, .price-info {
             background-color: #f8f9fa;
             border: 1px solid var(--border-color);
             border-radius: 12px;
-            padding: 1.5rem;
+            padding: 1rem; /* 패딩 축소 */
             margin-bottom: 1.5rem;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: var(--text-sub);
         }
         
@@ -95,74 +96,73 @@
             color: var(--primary-dark);
             font-weight: 700;
             display: block;
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            font-size: 0.95rem; /* 제목 크기도 약간 조정 */
+        }
+
+        /* [수정] 회색 안내 문구 아주 작게 (10px) */
+        .consent-box p, .photo-consent-box ul, .policy-box p {
+            font-size: 10px !important; 
+            line-height: 1.4;
+            color: #888;
         }
         
-        .policy-box table { width: 100%; border-collapse: collapse; margin: 1rem 0; background: white; font-size: 0.9rem; }
-        .policy-box th { background-color: #eef2f5; color: var(--primary-dark); font-weight: 600; padding: 0.8rem; border: 1px solid var(--border-color); }
-        .policy-box td { padding: 0.8rem; text-align: center; border: 1px solid var(--border-color); }
+        .policy-box table { width: 100%; border-collapse: collapse; margin: 0.8rem 0; background: white; font-size: 11px; /* [수정] 표 내용 작게 */ }
+        .policy-box th { background-color: #eef2f5; color: var(--primary-dark); font-weight: 600; padding: 0.6rem; border: 1px solid var(--border-color); }
+        .policy-box td { padding: 0.6rem; text-align: center; border: 1px solid var(--border-color); }
         
-        .form-group { margin-bottom: 1.8rem; }
-        label { display: block; margin-bottom: 0.6rem; font-weight: 600; color: var(--text-main); font-size: 0.95rem; }
+        .form-group { margin-bottom: 1.5rem; }
+        label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: var(--text-main); font-size: 0.9rem; }
         .required { color: var(--danger); margin-left: 3px; font-weight: bold; }
         
         input[type="text"], input[type="email"], input[type="tel"], select, textarea {
-            width: 100%; padding: 0.9rem 1rem; border: 1px solid var(--border-color);
-            border-radius: 8px; font-size: 1rem; font-family: inherit;
+            width: 100%; padding: 0.8rem; border: 1px solid var(--border-color);
+            border-radius: 8px; font-size: 0.95rem; font-family: inherit;
             transition: all 0.2s ease; background-color: #fff;
         }
         input:focus, select:focus, textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(26, 123, 160, 0.1); }
         input[readonly] { background-color: #f1f3f5; color: var(--text-sub); cursor: default; }
         
-        .checkbox-group, .radio-group { display: flex; flex-direction: column; gap: 0.8rem; }
+        .checkbox-group, .radio-group { display: flex; flex-direction: column; gap: 0.6rem; }
         .checkbox-item, .radio-item {
-            display: flex; align-items: center; padding: 1rem;
+            display: flex; align-items: center; padding: 0.8rem;
             border: 1px solid var(--border-color); border-radius: 8px;
             cursor: pointer; transition: all 0.2s; background: white;
         }
         .checkbox-item:hover, .radio-item:hover { border-color: var(--primary); background-color: #f0f7fa; transform: translateY(-1px); }
-        .checkbox-item input, .radio-item input { width: 18px; height: 18px; margin-right: 12px; accent-color: var(--primary); }
+        .checkbox-item input, .radio-item input { width: 18px; height: 18px; margin-right: 10px; accent-color: var(--primary); }
         
         .submit-btn {
-            width: 100%; padding: 1.2rem;
+            width: 100%; padding: 1rem;
             background: linear-gradient(to right, var(--primary), var(--primary-dark));
             color: white; border: none; border-radius: 8px;
-            font-size: 1.1rem; font-weight: 700; cursor: pointer;
+            font-size: 1rem; font-weight: 700; cursor: pointer;
             transition: transform 0.2s, box-shadow 0.2s; margin-top: 1rem;
         }
         .submit-btn:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(26, 123, 160, 0.3); }
         .submit-btn:disabled { background: #ccc; cursor: not-allowed; transform: none; }
         
-        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+        .info-grid { display: grid; grid-template-columns: 1fr; gap: 1.2rem; }
         
-        .price-item { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; padding: 1.2rem 0; border-bottom: 1px dashed rgba(0,0,0,0.1); font-size: 0.95rem; color: var(--text-sub); }
+        .price-item { display: flex; flex-direction: column; align-items: flex-start; gap: 5px; padding: 1rem 0; border-bottom: 1px dashed rgba(0,0,0,0.1); font-size: 0.9rem; color: var(--text-sub); }
         .price-item:last-child { border-bottom: none; }
-        .price-item span:last-child { font-size: 1.1rem; font-weight: 700; color: var(--primary); }
+        .price-item span:last-child { font-size: 1rem; font-weight: 700; color: var(--primary); }
         
         .hidden { display: none; }
-        .dynamic-section { background-color: #f8f9fa; border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem; margin-top: 1rem; animation: fadeIn 0.3s ease-in-out; }
+        .dynamic-section { background-color: #f8f9fa; border: 1px solid var(--border-color); border-radius: 12px; padding: 1.2rem; margin-top: 0.8rem; animation: fadeIn 0.3s ease-in-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
         
-        .calculation-box { background: white; padding: 1.2rem; border-radius: 8px; border: 1px solid var(--border-color); margin-top: 1rem; }
-        .calculation-row { display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.95rem; color: var(--text-sub); }
-        .calculation-total { display: flex; justify-content: space-between; margin-top: 1rem; padding-top: 1rem; border-top: 2px solid var(--border-color); font-weight: 700; font-size: 1.1rem; color: var(--primary); }
+        .calculation-box { background: white; padding: 1rem; border-radius: 8px; border: 1px solid var(--border-color); margin-top: 1rem; }
+        .calculation-row { display: flex; justify-content: space-between; margin-bottom: 0.4rem; font-size: 0.9rem; color: var(--text-sub); }
+        .calculation-total { display: flex; justify-content: space-between; margin-top: 0.8rem; padding-top: 0.8rem; border-top: 2px solid var(--border-color); font-weight: 700; font-size: 1rem; color: var(--primary); }
         
-        .contact-info { margin-top: 3rem; text-align: center; color: var(--text-sub); font-size: 0.9rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+        .contact-info { margin-top: 2.5rem; text-align: center; color: var(--text-sub); font-size: 0.8rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); }
         
         .overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); z-index: 1000; backdrop-filter: blur(3px); }
-        .success-message { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 2.5rem; border-radius: 16px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); z-index: 1001; width: 90%; max-width: 450px; text-align: center; }
+        .success-message { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 15px 40px rgba(0,0,0,0.2); z-index: 1001; width: 90%; max-width: 400px; text-align: center; }
         .success-message.show, .overlay.show { display: block; }
-        .success-icon { font-size: 3.5rem; color: var(--accent); margin-bottom: 1rem; }
-        .close-btn { background-color: var(--primary); color: white; border: none; padding: 0.8rem 2rem; border-radius: 6px; cursor: pointer; font-weight: 600; margin-top: 1.5rem; }
-
-        @media (max-width: 768px) {
-            .header { padding: 2rem 1.5rem; }
-            .form-content { padding: 2rem 1.5rem; }
-            .section-title { font-size: 1.35rem; }
-            .checkbox-item, .radio-item { padding: 0.8rem; }
-            .logo { max-width: 100%; } 
-        }
+        .success-icon { font-size: 3rem; color: var(--accent); margin-bottom: 1rem; }
+        .close-btn { background-color: var(--primary); color: white; border: none; padding: 0.7rem 2rem; border-radius: 6px; cursor: pointer; font-weight: 600; margin-top: 1.2rem; }
     </style>
 </head>
 <body>
@@ -171,7 +171,7 @@
     <div class="success-message" id="successMessage">
         <div class="success-icon">✓</div>
         <h2 style="color:var(--primary); margin-bottom:1rem;">등록 완료</h2>
-        <p style="color:#666; margin-bottom:1.5rem;">
+        <p style="color:#666; margin-bottom:1.5rem; font-size:0.9rem;">
             신청해 주셔서 감사합니다.<br>
             입금 확인 후 최종 완료 메일을 보내드립니다.
         </p>
@@ -186,7 +186,7 @@
                 </div>
             </div>
             <div class="header-info">
-                <div><strong>일정</strong> 2026년 2월 27일 (금) 3:30 PM - 3월 1일 (일) 12:00 PM</div>
+                <div><strong>일정</strong> 2026년 2월 27일(금) 3:30 PM - 3월 1일(일) 12:00 PM</div>
                 <div><strong>장소</strong> 디아넥스호텔 · 비오토피아 (제주)</div>
             </div>
         </div>
@@ -196,9 +196,8 @@
                 <h2 class="section-title">개인정보 수집 및 이용 동의</h2>
                 <div class="consent-box">
                     <strong>개인정보보호법 준수 안내</strong>
-                    <p style="margin-top:0.5rem; font-size:0.9rem;">
-                        수집 목적: 행사 운영 및 참가자 관리<br>
-                        수집 항목: 이름, 이메일, 연락처, 소속 등<br>
+                    <p style="margin-top:0.3rem; font-size:10px;">
+                        수집 목적: 행사 운영 및 참가자 관리 / 수집 항목: 이름, 이메일, 연락처, 소속 등<br>
                         보유 기간: 행사 종료 후 6개월 (이후 파기)
                     </p>
                 </div>
@@ -221,7 +220,7 @@
                 <h2 class="section-title">사진 촬영 및 사용 동의</h2>
                 <div class="photo-consent-box">
                     <h4>촬영 및 활용 안내</h4>
-                    <ul style="list-style: inside; padding:0; margin-top:0.5rem;">
+                    <ul style="list-style: inside; padding:0; margin-top:0.3rem; font-size:10px;">
                         <li>행사 기록 및 차년도 프리뷰 자료 활용</li>
                         <li>웹사이트 및 관련 자료 게재</li>
                     </ul>
@@ -254,10 +253,10 @@
                         <tbody>
                             <tr><td>60~46일전</td><td>70%</td></tr>
                             <tr><td>45~31일전</td><td>50%</td></tr>
-                            <tr><td>30~당일</td><td style="color:var(--danger); font-weight:bold;">환불불가</td></tr>
+                            <tr><td>30~당일</td><td style="color:var(--danger); font-weight:bold; font-size:11px;">환불불가</td></tr>
                         </tbody>
                     </table>
-                    <p style="font-size:0.9rem; margin-top:0.5rem;">
+                    <p style="font-size:10px; margin-top:0.5rem;">
                         * 취소 신청: 운영사무국 이메일 (moonjkim01@gmail.com)
                     </p>
                 </div>
