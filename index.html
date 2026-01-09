@@ -51,7 +51,6 @@
         }
         
         .logo-container {
-            /* 수정됨: 여백 완전히 제거 */
             margin-bottom: 0; 
             display: flex;
             justify-content: center;
@@ -63,7 +62,6 @@
             height: auto;
             display: block;
             filter: drop-shadow(0 4px 10px rgba(0,0,0,0.2));
-            /* 이미지 자체 여백 제거 보장 */
             margin-bottom: -10px; 
         }
         
@@ -76,7 +74,6 @@
             display: inline-block;
             text-align: left;
             font-size: 1.05rem;
-            /* 수정됨: 위쪽 여백 조정하여 로고에 붙임 */
             margin-top: 10px; 
         }
         
@@ -278,18 +275,27 @@
             gap: 1.5rem;
         }
         
-        /* 가격 정보 아이템 (박스 내부) */
+        /* [수정됨] 가격 정보 아이템: 세로 배치 및 왼쪽 정렬 */
         .price-item {
             display: flex;
-            justify-content: space-between;
-            padding: 0.8rem 0;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+            padding: 1.2rem 0;
             border-bottom: 1px dashed rgba(0,0,0,0.1);
             font-size: 0.95rem;
-            color: var(--text-sub); /* 글자색 통일 */
+            color: var(--text-sub);
         }
-        
+
         .price-item:last-child {
             border-bottom: none;
+        }
+
+        /* [추가됨] 가격 텍스트 강조 */
+        .price-item span:last-child {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
         }
         
         /* 동적 섹션 */
