@@ -47,23 +47,35 @@
         }
         
         .logo-container { margin-bottom: 0; display: flex; justify-content: center; }
-        .logo { max-width: 600px; width: 100%; height: auto; display: block; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.2)); margin-bottom: -10px; }
+        
+        /* [수정] 로고 그림자 강화 (입체감) */
+        .logo { 
+            max-width: 600px; 
+            width: 100%; 
+            height: auto; 
+            display: block; 
+            filter: drop-shadow(0 12px 24px rgba(0,0,0,0.35)); /* 그림자 더 진하게 수정 */
+            margin-bottom: -10px; 
+            transform: translateZ(0); /* 입체감 렌더링 최적화 */
+        }
         
         /* [PC용 기본 스타일] 헤더 정보 */
         .header-info {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(5px);
-            padding: 1.2rem 2rem; /* 넓은 패딩 */
+            padding: 1.2rem 2rem;
             border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             display: inline-block;
             text-align: left;
-            font-size: 1.05rem; /* [PC] 큰 폰트 유지 */
-            margin-top: 15px; 
+            font-size: 1.05rem;
+            margin-top: 20px; 
         }
         
-        .header-info div { margin: 0.5rem 0; /* 줄 간격 넉넉하게 */ }
-        .header-info strong { color: #ffd54f; font-weight: 600; margin-right: 0.5rem; font-size: 1.1rem; }
+        /* PC에서는 한 줄로 표시 (flex 아님) */
+        .info-row { margin: 0.5rem 0; }
+        .info-label { color: #ffd54f; font-weight: 600; margin-right: 0.5rem; font-size: 1.1rem; }
+        .info-content { color: white; }
         
         .form-content { padding: 3rem 2.5rem; }
         .section { margin-bottom: 3.5rem; }
@@ -83,14 +95,14 @@
             background-color: var(--primary); margin-right: 12px; border-radius: 3px;
         }
         
-        /* 박스 스타일 (약관, 정책 등) */
+        /* 박스 스타일 */
         .consent-box, .policy-box, .photo-consent-box, .price-info {
             background-color: #f8f9fa;
             border: 1px solid var(--border-color);
             border-radius: 12px;
             padding: 1.5rem;
             margin-bottom: 1.5rem;
-            font-size: 0.95rem; /* [PC] 기본 폰트 크기 */
+            font-size: 0.95rem;
             color: var(--text-sub);
         }
         
@@ -102,7 +114,7 @@
             font-size: 1.1rem;
         }
 
-        /* [PC] 안내 문구 폰트 크기 (일반적 크기) */
+        /* [PC] 안내 문구 폰트 크기 */
         .info-text-small {
             font-size: 0.9rem;
             margin-top: 0.5rem;
@@ -115,7 +127,7 @@
         .policy-box th { background-color: #eef2f5; color: var(--primary-dark); font-weight: 600; padding: 0.8rem; border: 1px solid var(--border-color); }
         .policy-box td { padding: 0.8rem; text-align: center; border: 1px solid var(--border-color); }
 
-        /* [PC & 모바일 공통] 환불불가 빨간색 강조 */
+        /* 환불불가 빨간색 강조 */
         .refund-highlight { color: var(--danger); font-weight: bold; }
         
         .form-group { margin-bottom: 1.8rem; }
@@ -182,14 +194,21 @@
             .section-title { font-size: 1.3rem; margin-bottom: 1.2rem; }
             .section-title::before { height: 20px; }
             
-            /* 헤더 정보: 모바일에서 아주 작게, 줄바꿈 */
+            /* 헤더 정보: 모바일에서 아주 작게 */
             .header-info {
                 padding: 1rem;
                 font-size: 11px; /* 모바일용 작은 폰트 */
                 width: 95%;
             }
-            .header-info strong { font-size: 12px; margin-bottom: 2px; }
-            .header-info div { margin: 0; line-height: 1.5; letter-spacing: -0.3px; }
+            
+            /* [수정됨] 모바일에서 '일정', '장소' 라벨 줄바꿈 처리 */
+            .info-row { margin-bottom: 8px; }
+            .info-label { 
+                display: block; /* 줄바꿈 강제 */
+                margin-bottom: 3px; /* 내용과의 간격 */
+                font-size: 12px; 
+            }
+            .info-content { display: block; }
 
             /* 안내 박스 폰트 축소 */
             .consent-box, .policy-box, .photo-consent-box, .price-info { padding: 1rem; font-size: 0.9rem; }
@@ -243,13 +262,13 @@
             </div>
             
             <div class="header-info">
-                <div style="margin-bottom: 8px;">
-                    <strong>일정</strong>
-                    2026년 2월 27일(금) 3:30 PM - 3월 1일(일) 12:00 PM
+                <div class="info-row">
+                    <strong class="info-label">일정</strong>
+                    <span class="info-content">2026년 2월 27일(금) 3:30 PM - 3월 1일(일) 12:00 PM</span>
                 </div>
-                <div>
-                    <strong>장소</strong>
-                    디아넥스호텔 · 비오토피아 (제주)
+                <div class="info-row">
+                    <strong class="info-label">장소</strong>
+                    <span class="info-content">디아넥스호텔 · 비오토피아 (제주)</span>
                 </div>
             </div>
         </div>
