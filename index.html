@@ -42,13 +42,14 @@
         .header {
             background: linear-gradient(135deg, #1a7ba0 0%, #0d4b63 100%);
             color: var(--white);
-            padding: 2rem 1.5rem;
+            /* [수정] 아래 .form-content 패딩(2.5rem)과 맞춰서 박스 너비 라인 정렬 */
+            padding: 2rem 2.5rem; 
             text-align: center;
         }
         
         .logo-container { margin-bottom: 0; display: flex; justify-content: center; }
         
-        /* 로고 그림자 (입체감 유지) */
+        /* 로고 그림자 (입체감) */
         .logo { 
             max-width: 600px; 
             width: 100%; 
@@ -59,19 +60,24 @@
             transform: translateZ(0);
         }
         
-        /* [PC용 기본 스타일] */
+        /* [PC용 기본 스타일] 헤더 정보 */
         .header-info {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(5px);
-            padding: 1.2rem 2rem;
+            /* [수정] 박스 너비를 100%로 설정 (block) */
+            display: block; 
+            width: 100%;
+            /* [수정] 아래 .consent-box 패딩(1.5rem)과 동일하게 적용 */
+            padding: 1.5rem; 
             border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            display: inline-block;
             text-align: left;
             font-size: 1.05rem;
             margin-top: 20px; 
+            box-sizing: border-box;
         }
         
+        /* PC에서는 한 줄 표시 */
         .info-row { margin: 0.5rem 0; }
         .info-label { color: #ffd54f; font-weight: 600; margin-right: 0.5rem; font-size: 1.1rem; }
         .info-content { color: white; }
@@ -99,7 +105,7 @@
             background-color: #f8f9fa;
             border: 1px solid var(--border-color);
             border-radius: 12px;
-            padding: 1.5rem;
+            padding: 1.5rem; /* PC용 패딩 */
             margin-bottom: 1.5rem;
             font-size: 0.95rem;
             color: var(--text-sub);
@@ -184,16 +190,18 @@
         /* ========================================= */
         @media (max-width: 768px) {
             body { padding: 1rem 0.5rem; }
-            .header { padding: 2rem 0.5rem; /* [수정] 좌우 패딩 줄임 */ }
+            /* [수정] 헤더 좌우 패딩을 1rem으로 줄여서 내부 공간(박스 너비) 확보 */
+            .header { padding: 2rem 1rem; }
             .form-content { padding: 1.5rem 1rem; }
             .section { margin-bottom: 2.5rem; }
             .section-title { font-size: 1.3rem; margin-bottom: 1.2rem; }
             .section-title::before { height: 20px; }
             
-            /* [수정] 헤더 정보: 너비 최대화, 여백 최소화 */
+            /* [수정] 헤더 정보 박스 */
             .header-info {
-                padding: 1rem 0.5rem; /* 내부 여백 줄임 */
-                width: 100%; /* 너비 꽉 채움 */
+                /* 아래 .consent-box 모바일 패딩(1rem)과 동일하게 적용 */
+                padding: 1rem; 
+                width: 100%; 
                 box-sizing: border-box;
             }
             
@@ -202,20 +210,22 @@
             .info-label { 
                 display: block; 
                 margin-bottom: 2px;
-                font-size: 13px; /* 라벨 크기 약간 키움 */
+                font-size: 13px;
             }
             .info-content { 
                 display: block; 
-                font-size: 17px; /* [요청] 글씨체 살짝 키움 (11px -> 12px) */
-                letter-spacing: -0.6px; /* [요청] 한 줄에 들어오도록 자간 좁힘 */
-                word-spacing: -1px; /* 어절 간격 좁힘 */
-                white-space: nowrap; /* 줄바꿈 방지 시도 (화면이 너무 좁으면 잘릴 수 있으나 최대한 유지) */
+                /* [요청 반영] 박스가 넓어졌으므로 글씨 살짝 키움 (12.5px) */
+                font-size: 12.5px; 
+                /* [요청 반영] 한 줄에 들어오도록 자간 및 단어 간격 좁힘 */
+                letter-spacing: -0.6px; 
+                word-spacing: -1.5px;
+                white-space: nowrap; /* 줄바꿈 방지 */
             }
 
-            /* 안내 박스 폰트 축소 */
+            /* 안내 박스 폰트 및 패딩 축소 */
             .consent-box, .policy-box, .photo-consent-box, .price-info { padding: 1rem; font-size: 0.9rem; }
             
-            /* 안내 문구(회색) 아주 작게 */
+            /* 안내 문구(회색) 아주 작게 강제 적용 */
             .info-text-small {
                 font-size: 10px !important; 
                 line-height: 1.4;
