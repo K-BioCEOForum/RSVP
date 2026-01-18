@@ -102,7 +102,7 @@
             font-size: 0.95rem;
             color: var(--text-sub);
         }
-        
+
         .included-box {
             background-color: #eef7fb;
             border-color: #bbdefb;
@@ -191,33 +191,13 @@
             .section-title { font-size: 1.3rem; margin-bottom: 1.2rem; }
             .section-title::before { height: 20px; }
             
-            .header-info {
-                padding: 1rem; 
-                width: 100%; 
-                box-sizing: border-box;
-            }
-            
+            .header-info { padding: 1rem; width: 100%; box-sizing: border-box; }
             .info-row { margin-bottom: 10px; }
-            .info-label { 
-                display: block; 
-                margin-bottom: 2px;
-                font-size: 13px;
-            }
-            .info-content { 
-                display: block; 
-                font-size: 12.5px; 
-                letter-spacing: -0.6px; 
-                word-spacing: -1.5px;
-                white-space: nowrap; 
-            }
+            .info-label { display: block; margin-bottom: 2px; font-size: 13px; }
+            .info-content { display: block; font-size: 12.5px; letter-spacing: -0.6px; word-spacing: -1.5px; white-space: nowrap; }
 
             .consent-box, .policy-box, .photo-consent-box, .price-info, .included-box { padding: 1rem; font-size: 0.9rem; }
-            
-            .info-text-small {
-                font-size: 10px !important; 
-                line-height: 1.4;
-                margin-top: 0.3rem;
-            }
+            .info-text-small { font-size: 10px !important; line-height: 1.4; margin-top: 0.3rem; }
             
             .policy-box table { font-size: 11px; margin: 0.8rem 0; }
             .policy-box th, .policy-box td { padding: 0.6rem; }
@@ -240,7 +220,7 @@
     <div class="success-message" id="successMessage">
         <div class="success-icon">✓</div>
         <h2 style="color:var(--primary); margin-bottom:1rem;">등록 완료</h2>
-        <p style="color:#666; margin-bottom:1.5rem;" class="info-text-small" style="font-size:0.9rem;">
+        <p style="color:#666; margin-bottom:1.5rem;" class="info-text-small">
             신청해 주셔서 감사합니다.<br>
             입금 확인 후 최종 완료 메일을 보내드립니다.
         </p>
@@ -270,6 +250,7 @@
         <form class="form-content" id="registrationForm">
             <input type="hidden" name="accommodation" value="신청">
             <input type="hidden" name="nights" value="2">
+
             <div class="section">
                 <h2 class="section-title">개인정보 수집 및 이용 동의</h2>
                 <div class="consent-box">
@@ -519,47 +500,73 @@
     
     <script>
         const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxVpxnuF6bfAO00WJ51dklmC7JvTXXePg9R5UzqcM2Pi18iQhV81YDYwJPo8MSkFyBN/exec';
+        
         function showSuccessMessage() { document.getElementById('overlay').classList.add('show'); document.getElementById('successMessage').classList.add('show'); }
         function closeSuccessMessage() { document.getElementById('overlay').classList.remove('show'); document.getElementById('successMessage').classList.remove('show'); }
         
         document.getElementById('registrationForm').addEventListener('submit', async function(e) {
             e.preventDefault();
+            
+            // 필수 동의 체크
             const privacyConsent = document.querySelector('input[name="privacy-consent"]:checked');
             if (!privacyConsent || privacyConsent.value !== 'agree') { alert('개인정보 수집 동의가 필요합니다.'); return; }
+            
             const photoConsent = document.querySelector('input[name="photo-consent"]:checked');
             if (!photoConsent) { alert('사진 촬영 동의를 선택해주세요.'); return; }
+            
             const refundConsent = document.querySelector('input[name="refund-consent"]:checked');
             if (!refundConsent || refundConsent.value !== 'agree') { alert('환불 정책 동의가 필요합니다.'); return; }
             
+            // 버튼 상태 변경
             const submitBtn = this.querySelector('.submit-btn');
             const originalText = submitBtn.textContent;
-            submitBtn.textContent = '처리 중...'; submitBtn.disabled = true;
+            submitBtn.textContent = '처리 중...'; 
+            submitBtn.disabled = true;
             
+            // 데이터 수집
             const formData = new FormData(this);
             const data = { timestamp: new Date().toISOString() };
             const checkboxFields = ['topics', 'roles', 'dates'];
+            
             for (let [key, value] of formData.entries()) {
-                if (checkboxFields.includes(key)) { if (!data[key]) data[key] = []; data[key].push(value); }
-                else { data[key] = value; }
+                if (checkboxFields.includes(key)) { 
+                    if (!data[key]) data[key] = []; 
+                    data[key].push(value); 
+                } else { 
+                    data[key] = value; 
+                }
             }
             
+            // [중요] text/plain으로 전송 (CORS 및 타입 에러 방지)
             try {
-                await fetch(GOOGLE_SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
-                showSuccessMessage(); this.reset();
+                await fetch(GOOGLE_SCRIPT_URL, { 
+                    method: 'POST', 
+                    mode: 'no-cors', 
+                    headers: { 'Content-Type': 'text/plain' }, 
+                    body: JSON.stringify(data) 
+                });
+                
+                showSuccessMessage(); 
+                this.reset();
                 document.querySelectorAll('.dynamic-section').forEach(el => el.classList.add('hidden'));
-                // [수정] 숙박 계산 박스 초기화 로직 삭제됨 (더 이상 사용 안함)
-            } catch (error) { alert('오류가 발생했습니다.'); } 
-            finally { submitBtn.textContent = originalText; submitBtn.disabled = false; }
+                calculateInvoiceAmounts(); // 리셋 후 가격 다시 표시
+                
+            } catch (error) { 
+                console.error('Error:', error);
+                alert('오류가 발생했습니다. 잠시 후 다시 시도해 주세요.'); 
+            } finally { 
+                submitBtn.textContent = originalText; 
+                submitBtn.disabled = false; 
+            }
         });
 
-        // [수정] 숙박 선택에 따른 이벤트 리스너 삭제됨 (항상 포함이므로)
-        // [수정] 박수 변경 이벤트 리스너 삭제됨 (2박 고정이므로)
-
+        // 계좌 이체 선택 시 상세 정보 표시
         document.querySelectorAll('input[name="payment-method"]').forEach(r => r.addEventListener('change', function() {
             const d = document.getElementById('invoice-details');
             if (this.value === '계좌 이체') d.classList.remove('hidden'); else d.classList.add('hidden');
         }));
 
+        // 세금계산서 필요 여부에 따른 입력창 표시
         document.querySelectorAll('input[name="invoice-needed"]').forEach(r => r.addEventListener('change', function() {
             const info = document.getElementById('invoice-info');
             const noCost = document.getElementById('no-invoice-cost');
@@ -574,19 +581,26 @@
             calculateInvoiceAmounts();
         }));
 
-        // [수정] 가격 계산 함수 단순화 (고정 가격 160만원)
+        // 가격 계산 (고정값)
         function calculateInvoiceAmounts() {
-            // 참가비 100만 + 숙박 60만 = 160만 (VAT 별도)
-            const supply = 1600000;
-            const vat = supply * 0.1; // 160,000원
+            const supply = 1600000; // 100만(참가비) + 60만(숙박2박)
+            const vat = supply * 0.1;
             
-            document.getElementById('supply-value').value = supply.toLocaleString() + "원";
-            document.getElementById('vat-value').value = vat.toLocaleString() + "원";
-            document.getElementById('total-value').value = (supply + vat).toLocaleString() + "원"; // 1,760,000원
-            document.getElementById('deposit-total-value').value = supply.toLocaleString() + "원"; // 1,600,000원 (VAT 별도 안내)
+            // 요소가 존재할 때만 값 입력 (오류 방지)
+            const elSupply = document.getElementById('supply-value');
+            if(elSupply) elSupply.value = supply.toLocaleString() + "원";
+            
+            const elVat = document.getElementById('vat-value');
+            if(elVat) elVat.value = vat.toLocaleString() + "원";
+            
+            const elTotal = document.getElementById('total-value');
+            if(elTotal) elTotal.value = (supply + vat).toLocaleString() + "원";
+            
+            const elDeposit = document.getElementById('deposit-total-value');
+            if(elDeposit) elDeposit.value = supply.toLocaleString() + "원";
         }
         
-        // [추가] 초기 로드시 가격 세팅
+        // 초기 로드시 가격 세팅
         calculateInvoiceAmounts();
     </script>
 </body>
